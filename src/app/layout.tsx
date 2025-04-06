@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 
+import { QueryProvider } from "@/lib/query-client";
+
 import "./globals.css";
 
 const space_grotesk = Space_Grotesk({
@@ -20,9 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${space_grotesk.variable} font-sans antialiased`}>
-        {children}
-      </body>
+      <QueryProvider>
+        <body className={`${space_grotesk.variable} font-sans antialiased`}>
+          {children}
+        </body>
+      </QueryProvider>
     </html>
   );
 }
