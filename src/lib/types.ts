@@ -3,6 +3,7 @@
 
 export interface NewsPost {
   id: string;
+  title: string;
   status: string;
   sort: number;
   user_created: string;
