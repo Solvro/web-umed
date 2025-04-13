@@ -38,7 +38,9 @@ export function NewsCard({ post }: { post: NewsPost }) {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <p>Utworzono {getFriendlyStringDate(post.date_created)}</p>
+                    <p className="cursor-pointer">
+                      Utworzono {getFriendlyStringDate(post.date_created)}
+                    </p>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Edytowano {getFriendlyStringDate(post.date_updated)}</p>
