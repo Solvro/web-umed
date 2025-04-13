@@ -1,7 +1,7 @@
 import React from "react";
 
 import { fetchData } from "../lib/api";
-import { NewsPost } from "../lib/types";
+import type { NewsPost } from "../lib/types";
 import { NewsCard } from "./news-card";
 
 export async function NewsContainer() {
