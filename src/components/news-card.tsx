@@ -30,7 +30,7 @@ export function NewsCard({ post }: { post: NewsPost }) {
     <Card className="bg-secondary gap-3 rounded-3xl p-4 text-lg shadow-2xl">
       <CardHeader className="relative">
         <CardTitle className="text-primary text-2xl font-bold">
-          Fajny Post
+          {post.title}
         </CardTitle>
         <div className="absolute top-0 right-0">
           <span className="text-center text-sm font-medium text-gray-500">
