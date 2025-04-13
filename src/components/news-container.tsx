@@ -9,7 +9,7 @@ export async function NewsContainer() {
 
   try {
     const response = await fetchData<{ data: NewsPost[] }>("items/news");
-    posts = response.data;
+    posts = response.data.filter((post) => post.status === "published");
   } catch (error) {
     console.error("Error fetching news posts:", error);
     return null;

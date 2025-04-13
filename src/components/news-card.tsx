@@ -34,16 +34,20 @@ export function NewsCard({ post }: { post: NewsPost }) {
         </CardTitle>
         <div className="absolute top-0 right-0">
           <span className="text-center text-sm font-medium text-gray-500">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <p>Utworzono {getFriendlyStringDate(post.date_created)}</p>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Edytowano {getFriendlyStringDate(post.date_updated)}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            {post.date_updated ? (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <p>Utworzono {getFriendlyStringDate(post.date_created)}</p>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Edytowano {getFriendlyStringDate(post.date_updated)}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            ) : (
+              <p>Utworzono {getFriendlyStringDate(post.date_created)}</p>
+            )}
           </span>
         </div>
       </CardHeader>
