@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { FOOTER_LINKS } from "@/config/links";
+
 export function Footer() {
   return (
     <footer className="text-primary-foreground mt-32 w-full">
@@ -16,10 +18,10 @@ export function Footer() {
           <FooterLink href="/#">Zgłaszanie problemów</FooterLink>
         </FooterSection>
         <FooterSection title="Social media">
-          <FooterLink href="https://facebook.com/#" target="_blank">
+          <FooterLink href={FOOTER_LINKS.Facebook} target="_blank">
             Facebook
           </FooterLink>
-          <FooterLink href="https://instagram.com/#" target="_blank">
+          <FooterLink href={FOOTER_LINKS.Instagram} target="_blank">
             Instagram
           </FooterLink>
         </FooterSection>
