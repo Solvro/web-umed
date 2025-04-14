@@ -8,8 +8,8 @@ export function Footer() {
     <footer className="text-primary-foreground mt-32 w-full">
       <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
         <FooterSection title="Kontakt">
-          <FooterLink href="mailto:john.doe@pwr.edu.pl">
-            john.doe@pwr.edu.pl
+          <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
+            {FOOTER_LINKS.contactMail}
           </FooterLink>
         </FooterSection>
 
@@ -18,10 +18,10 @@ export function Footer() {
           <FooterLink href="/#">Zgłaszanie problemów</FooterLink>
         </FooterSection>
         <FooterSection title="Social media">
-          <FooterLink href={FOOTER_LINKS.Facebook} target="_blank">
+          <FooterLink href={FOOTER_LINKS.facebook} target="_blank">
             Facebook
           </FooterLink>
-          <FooterLink href={FOOTER_LINKS.Instagram} target="_blank">
+          <FooterLink href={FOOTER_LINKS.instagram} target="_blank">
             Instagram
           </FooterLink>
         </FooterSection>

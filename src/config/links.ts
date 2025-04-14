@@ -1,4 +1,5 @@
 export const FOOTER_LINKS = {
-  Facebook: "https://facebook.com/#",
-  Instagram: "https://instagram.com/#",
+  facebook: "https://facebook.com/#",
+  instagram: "https://instagram.com/#",
+  contactMail: "john.doe@pwr.edu.pl",
 };
