@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 
+import { Footer } from "@/components/footer";
 import { QueryProvider } from "@/lib/query-client";
 
 import "./globals.css";
@@ -21,10 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <QueryProvider>
-        <body className={`${space_grotesk.variable} font-sans antialiased`}>
-          {children}
+        <body
+          className={`${space_grotesk.variable} flex min-h-screen flex-col bg-gradient-to-br from-slate-950 to-blue-900 font-sans antialiased`}
+        >
+          <div className="flex-grow">{children}</div>
+          <Footer />
         </body>
       </QueryProvider>
     </html>
