@@ -1,6 +1,5 @@
 import { formatDistance } from "date-fns";
 import { pl } from "date-fns/locale";
-import React from "react";
 
 import {
   Tooltip,
@@ -26,36 +25,39 @@ export function NewsCard({ post }: { post: NewsPost }) {
     return timePassed;
   };
 
+  const createdDate = `Utworzono ${getFriendlyStringDate(post.date_created)}`;
+  const updatedDate =
+    post.date_updated &&
+    `Edytowano ${getFriendlyStringDate(post.date_updated)}`;
+
   return (
     <Card className="bg-secondary gap-3 rounded-3xl p-4 text-lg shadow-2xl">
       <CardHeader className="relative">
-        <CardTitle className="text-primary text-2xl font-bold">
+        <CardTitle className="text-primary w-1/2 text-lg font-bold md:text-2xl">
           {post.title}
         </CardTitle>
-        <div className="absolute top-0 right-0">
-          <span className="text-center text-sm font-medium text-gray-500">
-            {post.date_updated ? (
+        <div className="md:absolute md:top-0 md:right-0">
+          <span className="text-xs font-medium text-gray-500 md:text-center md:text-sm">
+            {updatedDate ? (
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <p className="cursor-pointer">
-                      Utworzono {getFriendlyStringDate(post.date_created)}
-                    </p>
+                    <p className="cursor-pointer">{createdDate} </p>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Edytowano {getFriendlyStringDate(post.date_updated)}</p>
+                    <p>{updatedDate}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             ) : (
-              <p>Utworzono {getFriendlyStringDate(post.date_created)}</p>
+              <p>{createdDate}</p>
             )}
           </span>
         </div>
       </CardHeader>
       <CardContent>
         <div
-          // eslint-disable-next-line react/no-danger
+          className="md:text-md text-sm"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </CardContent>
