@@ -11,4 +11,5 @@ export interface NewsPost {
   user_updated: string;
   date_updated: string;
   content: string;
+  image_id: string;
 }

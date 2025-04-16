@@ -1,5 +1,6 @@
 import { formatDistance } from "date-fns";
 import { pl } from "date-fns/locale";
+import Image from "next/image";
 
 import {
   Tooltip,
@@ -8,6 +9,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import type { NewsPost } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
@@ -56,10 +58,28 @@ export function NewsCard({ post }: { post: NewsPost }) {
         </div>
       </CardHeader>
       <CardContent>
-        <div
-          className="md:text-md text-sm"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        {post.image_id ? (
+          <div className="flex w-full flex-row flex-wrap justify-between">
+            <div
+              className="md:text-md w-full text-sm md:w-2/3"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+            <div className="mx-auto flex justify-center md:w-1/3">
+              <Image
+                src={getImageUrl(post.image_id)}
+                alt={post.title}
+                width={160}
+                height={160}
+                className="mt-5 mb-5 h-60 w-120 rounded-lg object-cover md:mt-0"
+              />
+            </div>
+          </div>
+        ) : (
+          <div
+            className="md:text-md text-sm"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        )}
       </CardContent>
     </Card>
   );
