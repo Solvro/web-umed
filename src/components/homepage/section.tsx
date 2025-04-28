@@ -4,15 +4,18 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-const sectionVariants = cva("px-[8%] py-6 sm:w-[unset] sm:px-20 lg:py-10", {
-  variants: {
-    variant: {
-      default: "",
-      secondary: "bg-secondary",
-      primary: "bg-primary text-primary-foreground",
+export const sectionVariants = cva(
+  "px-[8%] py-6 sm:w-[unset] sm:px-20 lg:py-10",
+  {
+    variants: {
+      variant: {
+        default: "",
+        secondary: "bg-secondary",
+        primary: "bg-primary text-primary-foreground",
+      },
     },
   },
-});
+);
 
 export function HomepageSection({
   heading,

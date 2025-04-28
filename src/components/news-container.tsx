@@ -17,18 +17,17 @@ export async function NewsContainer() {
 
   if (posts.length === 0) {
     return (
-      <div className="mx-auto w-2/3 text-center">
-        <h2 className="text-primary text-2xl font-bold">Brak aktualności</h2>
-        <p className="mt-4 text-lg text-gray-500">
+      <div className="sm:text-center">
+        <h3 className="text-primary text-xl font-bold">Brak aktualności</h3>
+        <p className="text-foreground/60 mt-4 text-lg">
           Nie znaleziono żadnych aktualności do wyświetlenia.
         </p>
-        <FrownIcon className="mx-auto mt-5 h-12 w-12 text-gray-400" />
+        <FrownIcon className="text-primary/60 mx-auto mt-5" size={48} />
       </div>
     );
   }
-
   return (
-    <div className="mx-auto flex w-full flex-col gap-3 md:w-2/3">
+    <div className="flex flex-col justify-center gap-6 md:flex-row">
       {posts.map((post) => (
         <NewsCard key={post.id} post={post} />
       ))}

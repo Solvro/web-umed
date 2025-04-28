@@ -1,10 +1,24 @@
+import Link from "next/link";
+
+import { HeroSection } from "@/components/hero";
 import { HomepageSection } from "@/components/homepage/section";
 import { NewsContainer } from "@/components/news-container";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-stretch justify-center gap-10 overflow-hidden py-8">
-      <NewsContainer />
+    <div className="min-h-screen overflow-hidden pb-8">
+      <HeroSection>
+        <span className="text-6xl">Zdrowie</span>
+        <span className="text-[37px]">Gra Pierwsze</span>
+        <span className="text-[52px]">Skrzypce</span>
+        <Button asChild className="mt-4 w-fit" size="sm">
+          <Link href="/about">Dowiedz się więcej!</Link>
+        </Button>
+      </HeroSection>
+      <HomepageSection heading="Aktualności" variant="secondary">
+        <NewsContainer />
+      </HomepageSection>
       <HomepageSection heading="O wydarzeniu">
         <div className="space-y-4">
           <p>
@@ -24,7 +38,7 @@ export default function Home() {
           </p>
         </div>
       </HomepageSection>
-      <HomepageSection variant="secondary" heading="Profilaktyka">
+      <HomepageSection heading="Profilaktyka" variant="secondary">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
           <div className="space-y-4">
             <p>
