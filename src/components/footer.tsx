@@ -5,7 +5,7 @@ import { FOOTER_LINKS } from "@/config/links";
 
 export function Footer() {
   return (
-    <footer className="text-primary-foreground mt-32 w-full">
+    <footer className="text-primary-foreground bg-primary mt-32 w-full pt-5">
       <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
         <FooterSection title="Kontakt">
           <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
@@ -29,7 +29,7 @@ export function Footer() {
 
       <div className="bg-primary-foreground/10">
         <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
-          <span className="opacity-80 select-none">
+          <span className="opacity-80">
             &copy; Solvro {new Date().getFullYear()}
           </span>
           <Link href="https://solvro.pl/" target="_blank">

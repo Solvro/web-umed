@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { Footer } from "@/components/footer";
@@ -7,8 +7,8 @@ import { QueryProvider } from "@/lib/query-client";
 
 import "./globals.css";
 
-const space_grotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="pl">
       <QueryProvider>
         <body
-          className={`${space_grotesk.variable} flex min-h-screen flex-col bg-gradient-to-br from-slate-950 to-blue-900 font-sans antialiased`}
+          className={`${urbanist.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
         >
           <div className="flex-grow">{children}</div>
           <Footer />
