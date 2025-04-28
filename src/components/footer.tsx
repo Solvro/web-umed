@@ -3,44 +3,6 @@ import type { ReactNode } from "react";
 
 import { FOOTER_LINKS } from "@/config/links";
 
-export function Footer() {
-  return (
-    <footer className="text-primary-foreground bg-primary mt-32 w-full pt-5">
-      <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FooterSection title="Kontakt">
-          <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
-            {FOOTER_LINKS.contactMail}
-          </FooterLink>
-        </FooterSection>
-
-        <FooterSection title="Przydatne linki">
-          <FooterLink href="/">Strona główna</FooterLink>
-          <FooterLink href="/#">Zgłaszanie problemów</FooterLink>
-        </FooterSection>
-        <FooterSection title="Social media">
-          <FooterLink href={FOOTER_LINKS.facebook} target="_blank">
-            Facebook
-          </FooterLink>
-          <FooterLink href={FOOTER_LINKS.instagram} target="_blank">
-            Instagram
-          </FooterLink>
-        </FooterSection>
-      </div>
-
-      <div className="bg-primary-foreground/10">
-        <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
-          <span className="opacity-80">
-            &copy; Solvro {new Date().getFullYear()}
-          </span>
-          <Link href="https://solvro.pl/" target="_blank">
-            Made with ❤️ by&nbsp;Solvro
-          </Link>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 function FooterSection({
   title,
   children,
@@ -79,5 +41,47 @@ function FooterLink({
     >
       {children}
     </Link>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="text-primary-foreground bg-primary mt-32 w-full pt-5">
+      <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+        <FooterSection title="Kontakt">
+          <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
+            {FOOTER_LINKS.contactMail}
+          </FooterLink>
+        </FooterSection>
+
+        <FooterSection title="Przydatne linki">
+          <FooterLink href="/">Strona główna</FooterLink>
+          <FooterLink href="/#">Zgłaszanie problemów</FooterLink>
+        </FooterSection>
+        <FooterSection title="Social media">
+          <FooterLink href={FOOTER_LINKS.facebook} target="_blank">
+            Facebook
+          </FooterLink>
+          <FooterLink href={FOOTER_LINKS.instagram} target="_blank">
+            Instagram
+          </FooterLink>
+        </FooterSection>
+      </div>
+
+      <div className="bg-primary-foreground/10">
+        <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
+          <span className="opacity-80">
+            &copy; {new Date().getFullYear()} Solvro
+          </span>
+          <Link
+            href="https://solvro.pl/"
+            className="underline-offset-4 hover:underline"
+            target="_blank"
+          >
+            Made with ❤️ by&nbsp;Solvro
+          </Link>
+        </div>
+      </div>
+    </footer>
   );
 }
