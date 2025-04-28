@@ -28,7 +28,7 @@ export async function NewsContainer() {
   }
 
   return (
-    <div className="flex w-full flex-col gap-3 md:w-2/3">
+    <div className="mx-auto flex w-full flex-col gap-3 md:w-2/3">
       {posts.map((post) => (
         <NewsCard key={post.id} post={post} />
       ))}

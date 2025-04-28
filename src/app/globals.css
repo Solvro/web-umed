@@ -52,9 +52,9 @@
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: #d93b3a;
   --primary-foreground: oklch(0.97 0.014 254.604);
-  --secondary: oklch(0.967 0.001 286.375);
+  --secondary: rgba(233, 233, 233, 1);
   --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: rgba(164, 164, 164, 0.47);
+  --muted: rgba(184, 184, 184, 1);
   --muted-foreground: oklch(0.552 0.016 285.938);
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.21 0.006 285.885);

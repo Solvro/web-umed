@@ -46,7 +46,7 @@ function FooterLink({
 
 export function Footer() {
   return (
-    <footer className="text-primary-foreground bg-primary mt-32 w-full pt-5">
+    <footer className="text-primary-foreground bg-primary mt-10 w-full pt-5">
       <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
         <FooterSection title="Kontakt">
           <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
@@ -67,12 +67,9 @@ export function Footer() {
           </FooterLink>
         </FooterSection>
       </div>
-
-      <div className="bg-primary-foreground/10">
+      <div className="bg-secondary-foreground/20 text-primary-foreground/85">
         <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
-          <span className="opacity-80">
-            &copy; {new Date().getFullYear()} Solvro
-          </span>
+          <span>&copy; {new Date().getFullYear()} Solvro</span>
           <Link
             href="https://solvro.pl/"
             className="underline-offset-4 hover:underline"

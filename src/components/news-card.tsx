@@ -31,36 +31,34 @@ export function NewsCard({ post }: { post: NewsPost }) {
     `Edytowano ${getFriendlyStringDate(post.date_updated)}`;
 
   return (
-    <Card className="gap-3 rounded-lg p-4 text-lg">
-      <CardHeader className="relative">
-        <CardTitle className="text-primary w-1/2 text-lg font-bold md:text-2xl">
-          {post.title}
-        </CardTitle>
-        <div className="md:absolute md:top-0 md:right-0">
-          <span className="text-muted-foreground text-xs font-medium md:text-center md:text-sm">
-            {updatedDate ? (
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <p className="cursor-pointer">{createdDate} </p>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{updatedDate}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            ) : (
-              <p>{createdDate}</p>
-            )}
-          </span>
-        </div>
+    <Card className="gap-3 overflow-hidden rounded-lg p-0 text-lg">
+      <CardHeader className="pt-4">
+        <span className="text-muted-foreground text-xs font-medium md:text-center md:text-sm">
+          {updatedDate ? (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="cursor-pointer">{createdDate} </p>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{updatedDate}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <p>{createdDate}</p>
+          )}
+        </span>
       </CardHeader>
-      <CardContent>
+      <CardContent className="w-full px-0">
         <div
-          className="md:text-md text-sm"
+          className="md:text-md w-full px-2 text-sm sm:px-6"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+        <CardTitle className="bg-muted mt-4 w-full font-normal">
+          <h3 className="py-4 text-center text-lg">{post.title}</h3>
+        </CardTitle>
       </CardContent>
     </Card>
   );
