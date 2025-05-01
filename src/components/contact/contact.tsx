@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { HTMLInputTypeAttribute } from "react";
-import type { FieldErrors, UseFormReturn } from "react-hook-form";
+import type { UseFormReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import type { z } from "zod";
@@ -10,23 +10,22 @@ import type { z } from "zod";
 import { FOOTER_LINKS } from "@/config/links";
 
 import { Button } from "../ui/button";
-import { Form, FormControl, FormField, FormItem } from "../ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { formSchema } from "./schema";
 import { submitContactForm } from "./submit";
 
-function onContactFormError(errors: FieldErrors<z.infer<typeof formSchema>>) {
-  toast.error("Formularz zawiera błędy", {
-    description: Object.entries(errors)
-      .map(([field, error]) => <p key={field}>{error.message}</p>)
-      .filter(Boolean),
-  });
-}
-
 export function Contact() {
   const form = useForm({
     resolver: zodResolver(formSchema),
+    mode: "onSubmit",
   });
 
   return (
@@ -67,7 +66,7 @@ export function Contact() {
                   } catch {
                     toast.error("Wystąpił błąd podczas wysyłania formularza");
                   }
-                }, onContactFormError)}
+                })}
                 className="max-w-screen-sm space-y-2"
               >
                 <TextField
@@ -125,7 +124,7 @@ function TextField({
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className="gap-1">
           <FormControl>
             <Input
               type={type}
@@ -134,7 +133,7 @@ function TextField({
               {...field}
             />
           </FormControl>
-          {/* <FormMessage /> */}
+          <FormMessage className="text-primary-foreground mb-2 font-semibold" />
         </FormItem>
       )}
     />
@@ -154,7 +153,7 @@ function TextareaField({
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className="gap-1">
           <FormControl>
             <Textarea
               placeholder={placeholder}
@@ -162,6 +161,7 @@ function TextareaField({
               className="bg-primary-foreground text-foreground px-4"
             />
           </FormControl>
+          <FormMessage className="text-primary-foreground mb-2 font-semibold" />
         </FormItem>
       )}
     />

@@ -2,9 +2,11 @@
 
 import type { z } from "zod";
 
-import type { formSchema } from "./schema";
+import { formSchema } from "./schema";
 
 export async function submitContactForm(values: z.infer<typeof formSchema>) {
+  await formSchema.parseAsync(values);
+
   console.warn("Unimplemented contact form submission", values);
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
