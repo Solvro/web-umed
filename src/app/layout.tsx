@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 
 import { CalendarWidget } from "@/components/calendar/widget";
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
 import { fetchData } from "@/lib/api";
 import { QueryProvider } from "@/lib/query-client";
 import type { CalendarEvent } from "@/lib/types";
@@ -57,6 +58,7 @@ export default async function RootLayout({
           <div className="flex-grow">{children}</div>
           <CalendarWidget events={events} />
           <Footer />
+          <Toaster richColors />
           <Script
             defer
             src="https://analytics.solvro.pl/script.js"

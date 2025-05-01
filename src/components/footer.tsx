@@ -46,13 +46,13 @@ function FooterLink({
 
 export function Footer() {
   return (
-    <footer className="text-primary-foreground bg-primary mt-10 w-full pt-5">
+    <footer className="text-primary-foreground bg-primary w-full pt-5">
       <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FooterSection title="Kontakt">
+        {/* <FooterSection title="Kontakt">
           <FooterLink href={`mailto:${FOOTER_LINKS.contactMail}`}>
             {FOOTER_LINKS.contactMail}
           </FooterLink>
-        </FooterSection>
+        </FooterSection> */}
 
         <FooterSection title="Przydatne linki">
           <FooterLink href="/">Strona główna</FooterLink>
