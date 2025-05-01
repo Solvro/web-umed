@@ -69,11 +69,14 @@ export function Contact() {
                 })}
                 className="max-w-screen-sm space-y-2"
               >
-                <TextField
-                  form={form}
-                  name="name"
-                  placeholder="Imię i nazwisko"
-                />
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <TextField form={form} name="first_name" placeholder="Imię" />
+                  <TextField
+                    form={form}
+                    name="last_name"
+                    placeholder="Nazwisko"
+                  />
+                </div>
                 <TextField
                   form={form}
                   type="email"
