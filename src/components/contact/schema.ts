@@ -1,8 +1,11 @@
 import { z } from "zod";
 
 export const formSchema = z.object({
-  name: z.string({ message: "Imię i nazwisko jest wymagane" }).min(4, {
-    message: "Imię i nazwisko musi mieć co najmniej 4 znaki",
+  first_name: z.string({ message: "Imię jest wymagane" }).min(1, {
+    message: "Imię jest wymagane",
+  }),
+  last_name: z.string({ message: "Nazwisko jest wymagane" }).min(1, {
+    message: "Nazwisko jest wymagane",
   }),
   email: z
     .string({ message: "Adres e-mail jest wymagany" })
