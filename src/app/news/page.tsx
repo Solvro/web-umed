@@ -1,12 +1,13 @@
 import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { fetchNewsPosts } from "@/components/news-container";
+import { PAGE_PATHS } from "@/config/constants";
 
 export default async function NewsPage() {
   const posts = await fetchNewsPosts();
   return (
     <div>
-      <HeroSection>Aktualności</HeroSection>
+      <HeroSection>{PAGE_PATHS.news}</HeroSection>
       {posts == null ? (
         <p>Brak aktualności</p>
       ) : (
@@ -14,7 +15,7 @@ export default async function NewsPage() {
           <ContentSection
             heading={
               <div className="mb-10 flex items-center justify-between">
-                <span className="text-5xl text-balance">{post.title}</span>
+                <span className="text-balance sm:text-5xl">{post.title}</span>
                 <span className="font-light">
                   {new Date(post.date_created).toLocaleDateString()}
                 </span>

@@ -5,3 +5,10 @@ export const FOOTER_LINKS = {
   instagram: "https://instagram.com/#",
   contactMail: "john.doe@pwr.edu.pl",
 };
+
+export const PAGE_PATHS = {
+  news: "Aktualności",
+  about: "O wydarzeniu",
+  lifestyle: "Profilaktyka",
+  results: "Wyniki badań",
+};

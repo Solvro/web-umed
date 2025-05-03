@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 
 import { Footer } from "@/components/footer";
@@ -29,6 +30,13 @@ export default function RootLayout({
         <body
           className={`${urbanist.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
         >
+          <NextTopLoader
+            color="var(--color-primary)"
+            showSpinner={false}
+            crawlSpeed={100}
+            crawl={true}
+            initialPosition={0.1}
+          />
           <div className="flex-grow">{children}</div>
           <Footer />
         </body>
