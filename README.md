@@ -26,7 +26,7 @@ Here are the authors of this application:
 - [Konrad Guzek](https://github.com/kguzek) - Frontend Tech lead
 - [Michał Banaszkiewicz](https://github.com/bnszky) - Frontend Dev
 - [Norman Wiese](https://github.com/TeraWattHour) - Frontend Dev
-- [Apolonia Abramowicz](https://github.com/Octopus4344) - Web app template author
+- [Apolonia Abramowicz](https://github.com/Octopus4344) - Web App Template Author
 
 ## Development
 
@@ -36,8 +36,8 @@ Here are the authors of this application:
 git clone git@github.com:Solvro/web-umed.git
 ```
 
->[!NOTE]
->If you are not in the Solvro organization, you will need to create a fork through GitHub and clone that instead.
+> [!NOTE]
+> If you are not in the Solvro organization, you will need to create a fork through GitHub and clone that instead.
 
 ### 2. Install Dependencies
 
@@ -66,30 +66,30 @@ Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 1. Checkout and update the `main` branch
 
-```bash
-   git checkout main
-   git pull origin main
-   git fetch
-```
+   ```bash
+     git checkout main
+     git pull origin main
+     git fetch
+   ```
 
 2. Create a new feature branch
 
-```bash
-   git checkout -b feat/my_feature_branch
-```
+   ```bash
+     git checkout -b feat/my_feature_branch
+   ```
 
 3. Commit your changes:
 
-```bash
-   git add .
-   git commit -m "<commit description>"
-```
+   ```bash
+     git add .
+     git commit -m "<commit description>"
+   ```
 
 4. Push to remote:
 
-```bash
-   git push origin feat/my_feature_branch
-```
+   ```bash
+     git push origin feat/my_feature_branch
+   ```
 
 5. Create a Pull Request on GitHub and wait for [@kguzek](https://github.com/kguzek) to review your code!
    A preview deployment of your changes will be live at <https://[pull_request_id].umed.solvro.pl>.
@@ -104,4 +104,4 @@ For questions or suggestions, please reach out to us:
 
 ---
 
-Thank you for reading! Stay tuned for more updates!
+Thank you for reading!
