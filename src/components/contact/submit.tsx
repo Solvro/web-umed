@@ -1,11 +1,10 @@
 "use server";
 
-import type { z } from "zod";
+import type { ContactFormSchema } from "@/config/schemas";
+import { contactFormSchema } from "@/config/schemas";
 
-import { formSchema } from "./schema";
-
-export async function submitContactForm(values: z.infer<typeof formSchema>) {
-  await formSchema.parseAsync(values);
+export async function submitContactForm(values: ContactFormSchema) {
+  await contactFormSchema.parseAsync(values);
 
   console.warn("Unimplemented contact form submission", values);
 
