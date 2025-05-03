@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { FOOTER_LINKS } from "@/config/links";
+import { FOOTER_LINKS } from "@/config/constants";
 
 function FooterSection({
   title,

@@ -1,20 +1,33 @@
 import Link from "next/link";
 
 import { HeroSection } from "@/components/hero";
+import { EventCountdown } from "@/components/homepage/countdown";
 import { HomepageSection } from "@/components/homepage/section";
 import { NewsContainer } from "@/components/news-container";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  // TODO: Replace with next event date
+  const nextEventDate = new Date("2025-05-11T10:00:00+02:00");
+
   return (
     <div className="min-h-screen overflow-hidden pb-8">
       <HeroSection>
-        <span className="text-6xl">Zdrowie</span>
-        <span className="text-[37px]">Gra Pierwsze</span>
-        <span className="text-[52px]">Skrzypce</span>
-        <Button asChild className="mt-4 w-fit" size="sm">
+        <span className="text-6xl md:text-[90px] lg:text-[128px]">Zdrowie</span>
+        <span className="text-[37px] md:text-[55px] lg:text-[79px]">
+          Gra Pierwsze
+        </span>
+        <span className="text-[52px] md:text-[78px] lg:text-[112px]">
+          Skrzypce
+        </span>
+        <Button
+          asChild
+          className="mt-6 w-fit md:mt-8 lg:mt-12"
+          size="responsive"
+        >
           <Link href="/about">Dowiedz się więcej!</Link>
         </Button>
+        <EventCountdown nextEventDate={nextEventDate} />
       </HeroSection>
       <HomepageSection heading="Aktualności" variant="secondary">
         <NewsContainer />

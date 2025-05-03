@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export const sectionVariants = cva(
-  "px-[8%] py-6 sm:w-[unset] sm:px-20 lg:py-10",
+  "px-[8%] py-6 sm:w-[unset] sm:px-30 md:px-40 lg:py-10",
   {
     variants: {
       variant: {
