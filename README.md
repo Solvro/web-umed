@@ -1,8 +1,10 @@
-# Solvro Next.js template
+# UMed × Solvro Web App
 
-## Welcome to the repository of Solvro Next.js template
+## Introduction
 
-A standardized Next.js template maintained by Solvro Science Club at Wrocław University of Science and Technology. This template incorporates our best practices, coding standards, and recommended project structure for web development projects. It serves as a starting point for new Solvro members and projects, ensuring consistency and quality across our initiatives.
+This is a Next.js landing page for the [UMed × Solvro Mobile Application](https://github.com/Solvro/mobile-umed).
+
+<https://umed.solvro.pl>
 
 ## Technologies used
 
@@ -10,23 +12,37 @@ A standardized Next.js template maintained by Solvro Science Club at Wrocław Un
 - React.js
 - TypeScript
 - Tailwind CSS
-- Shadcn/ui
+- shadcn/ui
 - Tanstack Query
 
 ## Links
 
 [![docs.solvro.pl](https://i.imgur.com/fuV0gra.png)](https://docs.solvro.pl)
 
+## Team
+
+Here are the authors of this application:
+
+- [Konrad Guzek](https://github.com/kguzek) - Frontend Tech lead
+- [Michał Banaszkiewicz](https://github.com/bnszky) - Frontend Dev
+- [Norman Wiese](https://github.com/TeraWattHour) - Frontend Dev
+- [Apolonia Abramowicz](https://github.com/Octopus4344) - Web app template author
+
 ## Development
 
-### 1. Use this template
+### 1. Clone this repo
 
-![Homepage](https://i.imgur.com/RXm10f8.png)
+```bash
+git clone git@github.com:Solvro/web-umed.git
+```
+
+>[!NOTE]
+>If you are not in the Solvro organization, you will need to create a fork through GitHub and clone that instead.
 
 ### 2. Install Dependencies
 
 ```bash
-cd web-template
+cd web-umed
 npm install
 ```
 
@@ -36,23 +52,19 @@ npm install
 npm run dev
 ```
 
-### 5. View the Application
+### 4. View the Application
 
 Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-## Working with git
+## Working with Git
 
-### Github Solvro Handbook
+### Solvro GitHub Handbook
 
 <https://docs.solvro.pl/guides/github>
 
-### SSH
-
-If you are a Windows user, follow this [tutorial](https://www.youtube.com/watch?v=vExsOTgIOGw) to connect via SSH
-
 ### Building a new feature
 
-1. Checkout and update main branch
+1. Checkout and update the `main` branch
 
 ```bash
    git checkout main
@@ -60,39 +72,27 @@ If you are a Windows user, follow this [tutorial](https://www.youtube.com/watch?
    git fetch
 ```
 
-2. Create new feature branch
+2. Create a new feature branch
 
 ```bash
-   git checkout -b feat/x_my_feature_branch
+   git checkout -b feat/my_feature_branch
 ```
-
-> 'x' stands for issue number; this command will create and checkout a new branch named feat/x_my_feature_branch
 
 3. Commit your changes:
 
 ```bash
    git add .
-   git commit -m "<description>"
+   git commit -m "<commit description>"
 ```
 
 4. Push to remote:
 
 ```bash
-   git push origin feat/x_my_feature_branch
+   git push origin feat/my_feature_branch
 ```
 
-5. Create a Pull Request on GitHub and wait for a review
-
-### ⚠️ Important ⚠️
-
-- Do not push directly to main branch!
-- Please remember to commit before checking out to a different branch
-- Clean up after a successful merge
-
-  ```bash
-  git branch -d feat/x_my_feature_branch
-  git push origin --delete feat/x_my_feature_branch
-  ```
+5. Create a Pull Request on GitHub and wait for [@kguzek](https://github.com/kguzek) to review your code!
+   A preview deployment of your changes will be live at <https://[pull_request_id].umed.solvro.pl>.
 
 ## Contact
 
