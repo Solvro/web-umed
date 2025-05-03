@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { sectionVariants } from "./homepage/section";
+import { sectionVariants } from "./content-section";
 
 export function HeroSection({ children }: { children: ReactNode }) {
   return (
@@ -15,7 +15,7 @@ export function HeroSection({ children }: { children: ReactNode }) {
         }),
       )}
     >
-      <h1 className="flex flex-col text-4xl">{children}</h1>
+      <h1 className="flex flex-col text-4xl text-[100px]">{children}</h1>
     </div>
   );
 }

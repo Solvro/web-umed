@@ -1,8 +1,8 @@
 import Link from "next/link";
 
+import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { EventCountdown } from "@/components/homepage/countdown";
-import { HomepageSection } from "@/components/homepage/section";
 import { NewsContainer } from "@/components/news-container";
 import { Button } from "@/components/ui/button";
 
@@ -29,10 +29,10 @@ export default function Home() {
         </Button>
         <EventCountdown nextEventDate={nextEventDate} />
       </HeroSection>
-      <HomepageSection heading="Aktualności" variant="secondary">
+      <ContentSection heading="Aktualności" variant="secondary">
         <NewsContainer />
-      </HomepageSection>
-      <HomepageSection heading="O wydarzeniu">
+      </ContentSection>
+      <ContentSection heading="O wydarzeniu">
         <div className="space-y-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -50,8 +50,8 @@ export default function Home() {
             eu, tempor eu metus. hendrerit.
           </p>
         </div>
-      </HomepageSection>
-      <HomepageSection heading="Profilaktyka" variant="secondary">
+      </ContentSection>
+      <ContentSection heading="Profilaktyka" variant="secondary">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
           <div className="space-y-4">
             <p>
@@ -88,8 +88,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </HomepageSection>
-      <HomepageSection heading="Wyniki badań">
+      </ContentSection>
+      <ContentSection heading="Wyniki badań">
         <div className="space-y-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -107,7 +107,7 @@ export default function Home() {
             eu, tempor eu metus. hendrerit.
           </p>
         </div>
-      </HomepageSection>
+      </ContentSection>
     </div>
   );
 }

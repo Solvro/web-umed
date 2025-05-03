@@ -17,12 +17,12 @@ export const sectionVariants = cva(
   },
 );
 
-export function HomepageSection({
+export function ContentSection({
   heading,
   children,
   variant = "default",
 }: {
-  heading: string;
+  heading: ReactNode;
   children: ReactNode;
 } & VariantProps<typeof sectionVariants>) {
   return (

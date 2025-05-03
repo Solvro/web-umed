@@ -4,7 +4,7 @@ import { fetchData } from "../lib/api";
 import type { NewsPost } from "../lib/types";
 import { NewsCard } from "./news-card";
 
-export async function NewsContainer() {
+export async function fetchNewsPosts() {
   let posts;
 
   try {
@@ -12,6 +12,15 @@ export async function NewsContainer() {
     posts = response.data.filter((post) => post.status === "published");
   } catch (error) {
     console.error("Error fetching news posts:", error);
+    return null;
+  }
+
+  return posts;
+}
+
+export async function NewsContainer() {
+  const posts = await fetchNewsPosts();
+  if (posts == null) {
     return null;
   }
 
