@@ -20,9 +20,9 @@ export function NavbarLink({
     <Link
       href={`/${path}`}
       className={cn(
-        "hover:text-background lg:hover:text-primary/85 border-primary transition-colors duration-300 lg:border-l-2 lg:px-6 lg:text-xl lg:last:border-r-2 xl:px-8 xl:text-2xl",
+        "text-background lg:text-foreground lg:hover:text-primary/85 border-primary text-center underline-offset-4 transition-colors duration-300 lg:border-l-2 lg:px-[23px] lg:text-xl lg:no-underline lg:last:border-r-2 xl:px-8 xl:text-2xl",
         {
-          "text-background lg:text-primary": route === path,
+          "lg:text-primary underline": route === path,
         },
       )}
     >
