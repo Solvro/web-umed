@@ -11,6 +11,7 @@ import { PAGE_PATHS } from "@/config/constants";
 import { cn } from "@/lib/utils";
 
 import { Button } from "../ui/button";
+import { DownloadWidget } from "./download-widget";
 import { NavbarLink } from "./navbar-link";
 
 function MenuButton({
@@ -37,6 +38,7 @@ function MenuButton({
 
 export function NavigationBar() {
   const [collapsed, setCollapsed] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document
@@ -44,12 +46,36 @@ export function NavigationBar() {
       ?.classList.toggle("overflow-hidden", !collapsed);
   }, [collapsed]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="absolute left-0 mb-10 flex h-24 w-full items-center justify-between gap-4 px-8 text-2xl sm:px-20">
+    <div
+      className={cn(
+        "absolute left-0 mb-10 flex h-24 w-screen items-center justify-between gap-4 px-8 text-2xl transition-all duration-300 sm:px-20",
+        {
+          "bg-primary fixed top-0 shadow-lg": scrolled,
+        },
+      )}
+    >
       <Link
         href="/"
         aria-label="Wróć do strony głównej"
-        className="bg-muted grid size-24 place-items-center rounded-full"
+        className={cn(
+          "bg-muted grid place-items-center rounded-full transition-all duration-300",
+          {
+            "size-24 text-xl": !scrolled,
+            "size-16 text-sm": scrolled,
+          },
+        )}
       >
         {/* TODO: logo */}
         ZGPS
@@ -85,11 +111,12 @@ export function NavigationBar() {
         )}
       >
         {Object.entries(PAGE_PATHS).map(([path, label]) => (
-          <NavbarLink key={path} path={path}>
+          <NavbarLink key={path} path={path} isFixed={scrolled}>
             {label}
           </NavbarLink>
         ))}
       </nav>
+      <DownloadWidget />
       <button
         className={cn(
           "bg-foreground/15 fixed top-0 left-0 z-10 h-screen w-screen rounded-none backdrop-blur-xs transition-[opacity,visibility] duration-300 lg:opacity-0",
@@ -101,10 +128,6 @@ export function NavigationBar() {
           setCollapsed(true);
         }}
       ></button>
-      <Link href="/download" className="w-min">
-        {/* TODO: download widget & page */}
-        Pobierz Aplikację!
-      </Link>
     </div>
   );
 }
