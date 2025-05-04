@@ -9,7 +9,7 @@ export async function submitContactForm(values: ContactFormSchema) {
   console.warn("Unimplemented contact form submission", values);
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  if (values.first_name !== "Success") {
+  if (values.firstName !== "Success") {
     throw new Error("Unimplemented");
   }
 }

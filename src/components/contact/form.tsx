@@ -27,8 +27,8 @@ export function ContactForm() {
     resolver: zodResolver(contactFormSchema),
     mode: "onSubmit",
     defaultValues: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       content: "",
@@ -55,13 +55,13 @@ export function ContactForm() {
         <div className="grid grid-cols-1 place-items-start gap-2 sm:grid-cols-2">
           <TextField
             form={form}
-            name="first_name"
+            name="firstName"
             label="Imię"
             placeholder="Jan"
           />
           <TextField
             form={form}
-            name="last_name"
+            name="lastName"
             label="Nazwisko"
             placeholder="Kowalski"
           />

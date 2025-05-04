@@ -1,10 +1,10 @@
 import { z } from "zod";
 
 export const contactFormSchema = z.object({
-  first_name: z.string().min(1, {
+  firstName: z.string().min(1, {
     message: "Imię jest wymagane",
   }),
-  last_name: z.string().min(1, {
+  lastName: z.string().min(1, {
     message: "Nazwisko jest wymagane",
   }),
   email: z.string().email({ message: "Niepoprawny adres e-mail" }),
