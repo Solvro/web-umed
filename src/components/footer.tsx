@@ -1,9 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { FOOTER_LINKS } from "@/config/constants";
-
 import { Contact } from "./contact";
+import { BugFormButton } from "./bug-form-button";
 
 function FooterSection({
   title,
@@ -28,11 +30,13 @@ function FooterLink({
   target,
   children,
   label,
+  onClick,
 }: {
   href: string;
   target?: string;
   label?: string;
   children: ReactNode;
+  onClick?: (error: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   return (
     <Link
@@ -40,6 +44,7 @@ function FooterLink({
       target={target}
       className="underline-offset-4 hover:underline"
       aria-label={label}
+      onClick={onClick}
     >
       {children}
     </Link>
@@ -53,7 +58,7 @@ export function Footer() {
       <div className="mx-auto mb-14 grid w-full max-w-screen-xl grid-cols-1 gap-4 px-4 pt-5 sm:grid-cols-2 lg:grid-cols-4">
         <FooterSection title="Przydatne linki">
           <FooterLink href="/">Strona główna</FooterLink>
-          <FooterLink href="/#">Zgłaszanie problemów</FooterLink>
+          <BugFormButton />
         </FooterSection>
         <FooterSection title="Social media">
           <FooterLink href={FOOTER_LINKS.facebook} target="_blank">

@@ -12,3 +12,16 @@ export const PAGE_PATHS = {
   lifestyle: "Profilaktyka",
   results: "Wyniki badań",
 };
+
+export const MUTATION_KEYS = {
+  REPORT_FORM: "reportForm",
+};
+
+export const QUERY_KEYS = {
+  EMAIL: "entry.280273623",
+  TITLE: "entry.1248470767",
+  CONTENT: "entry.881414235",
+};
+
+export const REPORT_FORM_URL =
+  "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2xwpWLh8fPizL-ik_uSEOmppCPCRiF87Wu0vli1ElLurVYA/formResponse";
