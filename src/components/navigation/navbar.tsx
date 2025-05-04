@@ -45,7 +45,7 @@ export function NavigationBar() {
   }, [collapsed]);
 
   return (
-    <div className="absolute left-0 mb-10 flex h-24 w-screen items-center justify-between gap-4 px-8 text-2xl sm:px-20">
+    <div className="absolute left-0 mb-10 flex h-24 w-full items-center justify-between gap-4 px-8 text-2xl sm:px-20">
       <Link
         href="/"
         aria-label="Wróć do strony głównej"
