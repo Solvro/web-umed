@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 
@@ -56,6 +57,11 @@ export default async function RootLayout({
           <div className="flex-grow">{children}</div>
           <CalendarWidget events={events} />
           <Footer />
+          <Script
+            defer
+            src="https://analytics.solvro.pl/script.js"
+            data-website-id="4615f41a-514f-440f-a259-fc563a43c93f"
+          ></Script>
         </body>
       </QueryProvider>
     </html>
