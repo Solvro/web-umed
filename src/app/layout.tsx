@@ -62,7 +62,7 @@ export default async function RootLayout({
           <Script
             defer
             src="https://analytics.solvro.pl/script.js"
-            data-website-id="4615f41a-514f-440f-a259-fc563a43c93f"
+            data-website-id="fe37dd89-55c7-4c63-9b0d-03d3b351db64"
           ></Script>
         </body>
       </QueryProvider>
