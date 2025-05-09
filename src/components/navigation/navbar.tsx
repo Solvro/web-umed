@@ -72,8 +72,8 @@ export function NavigationBar() {
         className={cn(
           "bg-muted grid place-items-center rounded-full transition-all duration-300",
           {
-            "size-24 text-xl": !scrolled,
-            "size-16 text-sm": scrolled,
+            "size-24 px-6 text-xl": !scrolled,
+            "size-16 px-4 text-sm": scrolled,
           },
         )}
       >
@@ -103,7 +103,7 @@ export function NavigationBar() {
       <nav
         id="navbar"
         className={cn(
-          "bg-primary fixed top-0 right-0 z-20 flex w-screen flex-col items-center gap-y-4 rounded-b-xl p-10 shadow-2xl transition-all duration-300 sm:w-[unset] sm:min-w-lg sm:origin-top-right sm:rounded-br-none lg:visible lg:static lg:scale-100 lg:flex-row lg:rounded-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none",
+          "bg-primary fixed top-0 right-0 z-20 flex w-screen flex-col justify-center gap-y-4 rounded-b-xl p-10 shadow-2xl transition-all duration-300 sm:w-screen sm:origin-top-right sm:items-start sm:rounded-br-none lg:visible lg:static lg:scale-100 lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none",
           {
             "invisible -translate-y-full opacity-0 sm:translate-y-0 sm:scale-0":
               collapsed,
