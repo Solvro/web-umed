@@ -58,6 +58,8 @@ export function BugForm() {
       });
 
       if (response.status === 0 || response.ok) {
+        form.reset();
+        setIsDialogOpen(false);
         return true;
       }
 
@@ -78,19 +80,14 @@ export function BugForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit((values) => {
-              toast.promise(
-                mutateAsync(values).catch((error: unknown) => {
-                  throw error;
-                }),
-                {
-                  loading: "Trwa wysyłanie zgłoszenia...",
-                  error: (error) => {
-                    console.error("Error while sending feedback form:", error);
-                    return "Nastąpił błąd podczas wysyłania zgłoszenia";
-                  },
-                  success: "Zgłoszenie wysłane pomyślnie!",
+              toast.promise(mutateAsync(values), {
+                loading: "Trwa wysyłanie zgłoszenia...",
+                error: (error) => {
+                  console.error("Error while sending feedback form:", error);
+                  return "Nastąpił błąd podczas wysyłania zgłoszenia";
                 },
-              );
+                success: "Zgłoszenie wysłane pomyślnie!",
+              });
             })}
           >
             <div className="grid gap-4 py-4">
@@ -101,7 +98,11 @@ export function BugForm() {
                   <FormItem>
                     <FormLabel>Adres email</FormLabel>
                     <FormControl>
-                      <Input placeholder="jan.kowalski@gmail.com" {...field} />
+                      <Input
+                        className="text-foreground"
+                        placeholder="jan.kowalski@gmail.com"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -114,7 +115,11 @@ export function BugForm() {
                   <FormItem>
                     <FormLabel>Tytuł</FormLabel>
                     <FormControl>
-                      <Input placeholder="Coś jest nie tak" {...field} />
+                      <Input
+                        className="text-foreground"
+                        placeholder="Coś jest nie tak"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -127,7 +132,11 @@ export function BugForm() {
                   <FormItem>
                     <FormLabel>Treść</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Opis problemu..." {...field} />
+                      <Textarea
+                        className="text-foreground"
+                        placeholder="Opis problemu..."
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
