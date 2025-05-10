@@ -8,6 +8,7 @@ import type { ComponentType } from "react";
 import { useEffect, useState } from "react";
 
 import { PAGE_PATHS } from "@/config/constants";
+import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 
 import { Button } from "../ui/button";
@@ -38,24 +39,14 @@ function MenuButton({
 
 export function NavigationBar() {
   const [collapsed, setCollapsed] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
+  const { y: scrollY } = useScroll();
+  const scrolled = scrollY > 0;
 
   useEffect(() => {
     document
       .querySelector("body")
       ?.classList.toggle("overflow-hidden", !collapsed);
   }, [collapsed]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div
