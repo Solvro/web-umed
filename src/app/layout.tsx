@@ -7,8 +7,8 @@ import { Toaster } from "sonner";
 
 import { CalendarWidget } from "@/components/calendar/widget";
 import { Footer } from "@/components/footer";
-import { fetchData } from "@/lib/api";
 import { BugReportProvider } from "@/hooks/use-bug-form";
+import { fetchData } from "@/lib/api";
 import { QueryProvider } from "@/lib/query-client";
 import type { CalendarEvent } from "@/lib/types";
 
