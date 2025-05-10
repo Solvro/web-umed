@@ -1,11 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { FOOTER_LINKS } from "@/config/constants";
-import { Contact } from "./contact";
+
 import { BugFormButton } from "./bug-form-button";
+import { Contact } from "./contact";
 
 function FooterSection({
   title,
@@ -30,13 +29,11 @@ function FooterLink({
   target,
   children,
   label,
-  onClick,
 }: {
   href: string;
   target?: string;
   label?: string;
   children: ReactNode;
-  onClick?: (error: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   return (
     <Link
@@ -44,7 +41,6 @@ function FooterLink({
       target={target}
       className="underline-offset-4 hover:underline"
       aria-label={label}
-      onClick={onClick}
     >
       {children}
     </Link>

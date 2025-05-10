@@ -2,8 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Bug } from "lucide-react";
-import { Loader } from "lucide-react";
+import { Bug, Loader } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -28,7 +27,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MUTATION_KEYS, QUERY_KEYS, REPORT_FORM_URL } from "@/config/constants";
 import { useBugReport } from "@/hooks/use-bug-form";
-import { FetchError, fetchData } from "@/lib/api";
+import { FetchError } from "@/lib/api";
 import { feedbackFormSchema } from "@/lib/schemas";
 import type { FeedbackFormSchema } from "@/lib/schemas";
 
@@ -52,12 +51,18 @@ export function BugForm() {
         [QUERY_KEYS.TITLE]: data.title,
         [QUERY_KEYS.CONTENT]: data.content,
       };
-      return fetchData(REPORT_FORM_URL, {
+      const response = await fetch(REPORT_FORM_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: {},
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(body).toString(),
       });
+
+      if (response.status === 0 || response.ok) {
+        return true;
+      }
+
+      return false;
     },
   });
 
@@ -76,9 +81,6 @@ export function BugForm() {
             onSubmit={form.handleSubmit((values) => {
               toast.promise(
                 mutateAsync(values).catch((error: unknown) => {
-                  if (error instanceof FetchError) {
-                    return null;
-                  }
                   throw error;
                 }),
                 {
