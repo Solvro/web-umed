@@ -70,7 +70,7 @@ export function BugForm() {
       <DialogContent className="text-primary bg-primary-foreground shadow-primary/80 shadow-2xl sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-lg font-bold">Twój feedback</DialogTitle>
-          <DialogDescription className="text-primary/60 text-md font-semibold">
+          <DialogDescription className="text-foreground text-md">
             To jest miejsce na twoje wszelkie uwagi i sugestie dotyczące strony.
             Jeśli znalazłeś błąd, to śmiało pisz 😉
           </DialogDescription>
