@@ -86,7 +86,9 @@ export function NavigationBar() {
       >
         <MenuButton
           as={Menu}
-          className="text-foreground/50"
+          className={cn("text-foreground/50", {
+            "text-background": scrolled,
+          })}
           hidden={!collapsed}
         />
         <MenuButton as={X} className="text-background" hidden={collapsed} />
