@@ -27,7 +27,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MUTATION_KEYS, QUERY_KEYS, REPORT_FORM_URL } from "@/config/constants";
 import { useBugReport } from "@/hooks/use-bug-form";
-import { FetchError } from "@/lib/api";
 import { feedbackFormSchema } from "@/lib/schemas";
 import type { FeedbackFormSchema } from "@/lib/schemas";
 
@@ -68,10 +67,10 @@ export function BugForm() {
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      <DialogContent className="text-primary-foreground sm:max-w-[425px]">
+      <DialogContent className="text-primary bg-primary-foreground shadow-primary/80 shadow-2xl sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Twój feedback</DialogTitle>
-          <DialogDescription className="text-primary text-md">
+          <DialogTitle className="text-lg font-bold">Twój feedback</DialogTitle>
+          <DialogDescription className="text-primary/60 text-md font-semibold">
             To jest miejsce na twoje wszelkie uwagi i sugestie dotyczące strony.
             Jeśli znalazłeś błąd, to śmiało pisz 😉
           </DialogDescription>
