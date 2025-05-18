@@ -17,8 +17,8 @@ export function NewsSection() {
           d="M 772 70 C 1073.6 70 1224.4 200 1526 200 L 1526 200 L 1526 0 L 772 0 Z"
         ></path>{" "}
       </svg>
-      <div className="flex w-full flex-col">
-        <h1 className="text-primary-foreground mb-20 text-center text-4xl">
+      <div className="flex w-full flex-col p-12">
+        <h1 className="text-primary-foreground mt-10 mb-20 text-center text-4xl lg:mt-0">
           Aktualności
         </h1>
         <NewsContainer />
