@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 function CountdownPart({ value, label }: { value?: number; label: string }) {
   return (
-    <div className="border-primary min-w-10 border-b-2 py-1 text-center sm:min-w-16 sm:py-2">
+    <div className="border-secondary min-w-10 border-b-2 py-1 text-center sm:min-w-16 sm:py-2">
       {value ?? 0}
       {label}
     </div>
@@ -36,10 +36,10 @@ export function EventCountdown({ nextEventDate }: { nextEventDate: Date }) {
   }, [nextEventDate]);
 
   return (
-    <div className="mt-9 text-xl sm:text-3xl">
+    <div className="mt-9 text-lg sm:text-xl">
       <p>Następne wydarzenie:</p>
       <div
-        className={cn("mt-3 flex gap-4 sm:gap-10", {
+        className={cn("mt-3 flex gap-3 sm:gap-5", {
           invisible: duration == null,
         })}
       >
