@@ -1,9 +1,6 @@
-import { Footprints, Heart, Info, Music, Music2 } from "lucide-react";
-import { Content } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { AboutApp } from "@/components/homepage/about-app";
 import { AboutEvent } from "@/components/homepage/about-event";
@@ -12,11 +9,7 @@ import { AboutUs } from "@/components/homepage/about-us";
 import { EventCountdown } from "@/components/homepage/countdown";
 import { NewsSection } from "@/components/homepage/news-section";
 import { Nutshell } from "@/components/homepage/nutshell";
-import { InfoCard } from "@/components/info-card";
-import { NewsContainer } from "@/components/news-container";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Home() {
   // TODO: Replace with next event date
@@ -31,10 +24,10 @@ export default function Home() {
         <span className="font-emilys-candy text-primary mt-2 text-[37px] md:text-[55px] lg:text-[64px]">
           Pierwsze Skrzypce
         </span>
-        <div className="ml-12">
+        <div className="mb-85 ml-0 lg:mb-0 lg:ml-12">
           <Button
             asChild
-            className="mt-6 w-[300px] rounded-4xl py-6 text-lg md:mt-8 lg:mt-12"
+            className="mt-6 w-[200px] rounded-4xl py-5 text-sm md:mt-8 lg:mt-12 lg:w-[300px] lg:py-6 lg:text-lg"
             variant="secondary"
           >
             <Link href="/about">Dowiedz się więcej!</Link>
@@ -44,9 +37,10 @@ export default function Home() {
         <Image
           src="/main.png"
           alt="Zdrowie Gra Pierwsze Skrzypce"
-          className="absolute top-25 right-10 -z-10 hidden object-cover lg:block"
-          width={700}
+          className="absolute top-80 right-0 -z-10 block h-[600px] w-[600px] object-contain md:top-105 md:right-40 lg:top-10 lg:right-10 lg:h-[700px] lg:w-[700px]"
           height={700}
+          width={700}
+          priority
         />
       </HeroSection>
 
