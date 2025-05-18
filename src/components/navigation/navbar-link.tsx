@@ -27,7 +27,7 @@ export function NavbarLink({
           "lg:text-primary sm:hover:text-secondary/80 lg:hover:text-primary/40 border-primary underline lg:no-underline":
             route === path && !isFixed,
           "hover:text-secondary/80 underline": route === path && isFixed,
-          "text-primary-foreground hover:text-secondary/80 border-secondary/80":
+          "text-primary-foreground hover:text-secondary/80 border-secondary-foreground/80":
             isFixed && route !== path,
           "lg:text-foreground lg:hover:text-primary/85 hover:text-secondary/80 border-primary":
             !isFixed && route !== path,

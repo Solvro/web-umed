@@ -51,7 +51,7 @@ export function NavigationBar() {
   return (
     <div
       className={cn(
-        "absolute left-0 mb-10 flex h-24 w-full items-center justify-between gap-4 px-8 text-2xl transition-all duration-300 sm:px-20",
+        "absolute left-0 z-30 mb-10 flex h-24 w-full items-center justify-between gap-4 px-8 text-2xl transition-all duration-300 sm:px-20",
         {
           "bg-primary fixed top-0 shadow-lg": scrolled,
         },

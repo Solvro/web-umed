@@ -38,7 +38,7 @@ export function CalendarWidget({ events }: { events: CalendarEvent[] }) {
             variant="ghost"
             aria-controls="calendar"
             className={cn(
-              "bg-secondary text-foreground cursor-pointer rounded-l-lg rounded-r-none p-20 px-2 shadow-md",
+              "bg-secondary text-primary-foreground cursor-pointer rounded-l-lg rounded-r-none p-20 px-2 shadow-md",
               {
                 "shadow-xl": !collapsed,
               },
