@@ -3,7 +3,7 @@ import Image from "next/image";
 export function AboutGoals() {
   return (
     <div className="relative flex items-start justify-start p-10 shadow-xl lg:p-20">
-      <div className="flex flex-col lg:ml-20 lg:w-1/2">
+      <div className="mb-80 flex flex-col lg:mb-2 lg:ml-20 lg:w-1/2">
         <h1 className="text-primary text-start text-4xl">Cele wydarzenia</h1>
         <p className="mt-4 mr-4 text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas
@@ -23,7 +23,7 @@ export function AboutGoals() {
         alt="Pressure example"
         width={700}
         height={700}
-        className="absolute -top-20 -right-40 object-contain"
+        className="absolute right-0 bottom-0 h-[400px] w-[400px] object-contain lg:-top-20 lg:-right-40 lg:h-[700px] lg:w-[700px]"
       />
     </div>
   );

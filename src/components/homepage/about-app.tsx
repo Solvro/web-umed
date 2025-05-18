@@ -24,9 +24,9 @@ export function AboutApp() {
           fill="white"
         ></path>
       </svg>
-      <div className="flex flex-col lg:ml-20 lg:w-1/2">
+      <div className="mt-20 mb-80 flex flex-col lg:mt-5 lg:mb-0 lg:ml-20 lg:w-1/2">
         <h1 className="text-primary-foreground text-start text-4xl">
-          O wydarzeniu
+          O aplikacji
         </h1>
         <p className="text-primary-foreground mt-4 mr-4 text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas
@@ -42,7 +42,7 @@ export function AboutApp() {
         </p>
         <Button
           asChild
-          className="mt-2 w-[350px] rounded-4xl py-6 text-lg md:mt-8 lg:mt-6"
+          className="mt-4 w-[350px] rounded-4xl py-6 text-lg md:mt-8 lg:mt-6"
           variant="secondary"
         >
           <Link href="/about">Pobierz aplikację!</Link>
@@ -53,7 +53,7 @@ export function AboutApp() {
         alt="Violin example"
         width={1000}
         height={1000}
-        className="absolute -top-25 -left-35 object-contain"
+        className="absolute bottom-0 left-0 object-contain md:-bottom-35 lg:-top-25 lg:-left-35"
       />
     </div>
   );
