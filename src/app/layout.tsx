@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import { Emilys_Candy } from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
@@ -17,6 +18,12 @@ import "./globals.css";
 const urbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
+});
+
+const emilysCandy = Emilys_Candy({
+  variable: "--font-emilys-candy",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -48,7 +55,7 @@ export default async function RootLayout({
       <QueryProvider>
         <BugReportProvider>
           <body
-            className={`${urbanist.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
+            className={`${urbanist.variable} ${emilysCandy.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
           >
             <NextTopLoader
               color="var(--color-primary)"

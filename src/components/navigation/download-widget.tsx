@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+import { buttonVariants } from "../ui/button";
 
 export function DownloadWidget() {
   return (
@@ -10,7 +11,7 @@ export function DownloadWidget() {
         href="/download"
         className={cn(
           buttonVariants({ variant: "fluid" }),
-          "mx-4 my-4 size-20 flex-col items-center justify-center rounded-2xl bg-white text-center text-sm font-semibold",
+          "mx-4 my-4 flex size-20 flex-col items-center justify-center rounded-2xl bg-white text-center text-sm font-semibold",
         )}
       >
         <span>Pobierz</span>
