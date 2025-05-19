@@ -1,113 +1,55 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
+import { AboutApp } from "@/components/homepage/about-app";
+import { AboutEvent } from "@/components/homepage/about-event";
+import { AboutGoals } from "@/components/homepage/about-goals";
+import { AboutUs } from "@/components/homepage/about-us";
 import { EventCountdown } from "@/components/homepage/countdown";
-import { NewsContainer } from "@/components/news-container";
+import { NewsSection } from "@/components/homepage/news-section";
+import { Nutshell } from "@/components/homepage/nutshell";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   // TODO: Replace with next event date
-  const nextEventDate = new Date("2025-05-11T10:00:00+02:00");
+  const nextEventDate = new Date("2025-10-11T10:00:00+02:00");
 
   return (
-    <div className="min-h-screen overflow-hidden pb-8">
+    <div className="relative min-h-screen overflow-hidden pb-8">
       <HeroSection>
-        <span className="text-6xl md:text-[90px] lg:text-[128px]">Zdrowie</span>
-        <span className="text-[37px] md:text-[55px] lg:text-[79px]">
-          Gra Pierwsze
+        <span className="font-emilys-candy text-primary mt-4 overflow-hidden md:text-[90px] lg:text-[96px]">
+          Zdrowie Gra
         </span>
-        <span className="text-[52px] md:text-[78px] lg:text-[112px]">
-          Skrzypce
+        <span className="font-emilys-candy text-primary mt-2 text-[37px] md:text-[55px] lg:text-[64px]">
+          Pierwsze Skrzypce
         </span>
-        <Button
-          asChild
-          className="mt-6 w-fit md:mt-8 lg:mt-12"
-          size="responsive"
-        >
-          <Link href="/about">Dowiedz się więcej!</Link>
-        </Button>
-        <EventCountdown nextEventDate={nextEventDate} />
+        <div className="mb-85 ml-0 lg:mb-0 lg:ml-12">
+          <Button
+            asChild
+            className="mt-6 w-[200px] rounded-4xl py-5 text-sm md:mt-8 lg:mt-12 lg:w-[300px] lg:py-6 lg:text-lg"
+            variant="secondary"
+          >
+            <Link href="/about">Dowiedz się więcej!</Link>
+          </Button>
+          <EventCountdown nextEventDate={nextEventDate} />
+        </div>
+        <Image
+          src="/main.png"
+          alt="Zdrowie Gra Pierwsze Skrzypce"
+          className="absolute top-80 right-0 -z-10 block h-[600px] w-[600px] object-contain md:top-105 md:right-40 lg:top-10 lg:right-10 lg:h-[700px] lg:w-[700px]"
+          height={700}
+          width={700}
+          priority
+        />
       </HeroSection>
-      <ContentSection heading="Aktualności" variant="secondary">
-        <NewsContainer />
-      </ContentSection>
-      <ContentSection heading="O wydarzeniu">
-        <div className="space-y-4">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            egestas euismod libero ac malesuada. Proin tempor ipsum non tellus
-            vehicula pellentesque.
-          </p>
-          <p>
-            Sed nec nulla at leo porta tempus. Praesent at libero ex. Phasellus
-            ornare justo diam, a ultrices felis mollis vel. Curabitur a
-            sollicitudin odio, Etiam non consectetur mi,
-          </p>
-          <p>
-            Vitae fringilla ante. Pellentesque arcu leo, tincidunt vel viverra
-            id, rutrum facilisis elit. Sed erat nisi, faucibus tincidunt iaculis
-            eu, tempor eu metus. hendrerit.
-          </p>
-        </div>
-      </ContentSection>
-      <ContentSection heading="Profilaktyka" variant="secondary">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-          <div className="space-y-4">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              egestas euismod libero ac malesuada. Proin tempor ipsum non tellus
-              vehicula pellentesque.
-            </p>
-            <p>
-              Sed nec nulla at leo porta tempus. Praesent at libero ex.
-              Phasellus ornare justo diam, a ultrices felis mollis vel.
-              Curabitur a sollicitudin odio, Etiam non consectetur mi,
-            </p>
-            <p>
-              Vitae fringilla ante. Pellentesque arcu leo, tincidunt vel viverra
-              id, rutrum facilisis elit. Sed erat nisi, faucibus tincidunt
-              iaculis eu, tempor eu metus. hendrerit.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              egestas euismod libero ac malesuada. Proin tempor ipsum non tellus
-              vehicula pellentesque.
-            </p>
-            <p>
-              Sed nec nulla at leo porta tempus. Praesent at libero ex.
-              Phasellus ornare justo diam, a ultrices felis mollis vel.
-              Curabitur a sollicitudin odio, Etiam non consectetur mi,
-            </p>
-            <p>
-              Vitae fringilla ante. Pellentesque arcu leo, tincidunt vel viverra
-              id, rutrum facilisis elit. Sed erat nisi, faucibus tincidunt
-              iaculis eu, tempor eu metus. hendrerit.
-            </p>
-          </div>
-        </div>
-      </ContentSection>
-      <ContentSection heading="Wyniki badań">
-        <div className="space-y-4">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            egestas euismod libero ac malesuada. Proin tempor ipsum non tellus
-            vehicula pellentesque.
-          </p>
-          <p>
-            Sed nec nulla at leo porta tempus. Praesent at libero ex. Phasellus
-            ornare justo diam, a ultrices felis mollis vel. Curabitur a
-            sollicitudin odio, Etiam non consectetur mi,
-          </p>
-          <p>
-            Vitae fringilla ante. Pellentesque arcu leo, tincidunt vel viverra
-            id, rutrum facilisis elit. Sed erat nisi, faucibus tincidunt iaculis
-            eu, tempor eu metus. hendrerit.
-          </p>
-        </div>
-      </ContentSection>
+
+      <Nutshell />
+      <AboutEvent />
+      <AboutApp />
+      <AboutGoals />
+      <NewsSection />
+      <AboutUs />
     </div>
   );
 }
