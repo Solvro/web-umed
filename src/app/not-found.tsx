@@ -8,7 +8,6 @@ import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 
-// eslint-disable-next-line import/no-default-export
 export default function NotFound() {
   const pathname = usePathname();
 
