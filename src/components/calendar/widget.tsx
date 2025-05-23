@@ -38,7 +38,7 @@ export function CalendarWidget({ events }: { events: CalendarEvent[] }) {
             variant="ghost"
             aria-controls="calendar"
             className={cn(
-              "bg-secondary text-foreground cursor-pointer rounded-l-lg rounded-r-none py-20 pr-2! pl-0! shadow-md",
+              "bg-secondary text-foreground cursor-pointer rounded-l-lg rounded-r-none p-20 px-2 shadow-md",
               {
                 "shadow-xl": !collapsed,
               },
@@ -47,7 +47,7 @@ export function CalendarWidget({ events }: { events: CalendarEvent[] }) {
               setCollapsed((previous) => !previous);
             }}
           >
-            <div className="border-muted ml-1 h-6 w-1 border-x"></div>
+            <div className="border-muted h-6 w-1 border-x"></div>
             <span
               style={{ writingMode: "vertical-lr" }}
               className="rotate-180 uppercase"
