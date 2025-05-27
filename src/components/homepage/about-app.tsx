@@ -50,7 +50,7 @@ export function AboutApp() {
       </div>
       <Image
         src="/app.png"
-        alt="Violin example"
+        alt="Mobile app example"
         width={1000}
         height={1000}
         className="absolute bottom-0 left-0 object-contain md:-bottom-35 lg:-top-25 lg:-left-35"
