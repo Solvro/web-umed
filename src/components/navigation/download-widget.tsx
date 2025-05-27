@@ -11,7 +11,7 @@ export function DownloadWidget() {
         href="/download"
         className={cn(
           buttonVariants({ variant: "fluid" }),
-          "mx-4 my-4 flex size-20 flex-col items-center justify-center rounded-2xl bg-white text-center text-sm font-semibold",
+          "mx-4 my-4 flex size-20 flex-col rounded-2xl bg-white text-center text-sm font-semibold hover:font-bold",
         )}
       >
         <span>Pobierz</span>
