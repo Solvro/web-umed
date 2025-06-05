@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
-import { Emilys_Candy } from "next/font/google";
+import { Emilys_Candy, Urbanist } from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";

@@ -11,6 +11,7 @@ export class FetchError extends Error {}
 export async function fetchData<T>(
   endpoint: string,
   options: RequestOptions = {},
+  apiUrl = API_URL,
 ) {
   if (["POST", "PUT", "PATCH"].includes(options.method ?? "")) {
     options.headers = {
@@ -19,7 +20,7 @@ export async function fetchData<T>(
     };
   }
   const response = await fetch(
-    isAbsolutePath(endpoint) ? endpoint : `${API_URL}/${endpoint}`,
+    isAbsolutePath(endpoint) ? endpoint : `${apiUrl}/${endpoint}`,
     {
       ...options,
       next: { revalidate: 60 },

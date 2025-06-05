@@ -17,3 +17,11 @@ export interface CalendarEvent extends Entity {
   date: string;
   description: string;
 }
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  photo: string | null;
+  subtitle: string | null;
+  sort: number;
+}

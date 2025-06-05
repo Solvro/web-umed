@@ -5,7 +5,13 @@ import { cn } from "@/lib/utils";
 import { sectionVariants } from "./content-section";
 import { NavigationBar } from "./navigation/navbar";
 
-export function HeroSection({ children }: { children: ReactNode }) {
+export function HeroSection({
+  children,
+  subtitle,
+}: {
+  children: ReactNode;
+  subtitle?: ReactNode;
+}) {
   return (
     <div
       className={cn(
@@ -20,6 +26,9 @@ export function HeroSection({ children }: { children: ReactNode }) {
       <h1 className="mt-30 flex flex-col text-4xl md:text-[60px] lg:text-[100px]">
         {children}
       </h1>
+      {subtitle !== undefined && (
+        <h4 className="-mt-1 text-lg md:text-xl lg:text-2xl">{subtitle}</h4>
+      )}
     </div>
   );
 }
