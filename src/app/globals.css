@@ -5,6 +5,9 @@
 
 @theme inline {
   --font-sans: var(--font-urbanist);
+  --font-serif: var(--font-yeseva-one);
+  --font-alt: var(--font-georama);
+  --font-thicc: var(--font-playfair-display);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -50,13 +53,13 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: #a2d05e;
+  --primary: #48ac94;
   --primary-foreground: oklch(1 0 0);
   --secondary: #ff8037;
   --secondary-foreground: oklch(1 0 0);
   --muted: rgba(184, 184, 184, 1);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: #006400;
+  --accent: #19715c;
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -147,8 +150,4 @@
     width: 300%;
     height: 300%;
   }
-}
-
-.font-emilys-candy {
-  font-family: var(--font-emilys-candy), cursive;
 }

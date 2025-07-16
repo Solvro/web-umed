@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
-import { Emilys_Candy } from "next/font/google";
+import {
+  Georama,
+  Playfair_Display,
+  Urbanist,
+  Yeseva_One,
+} from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
@@ -20,10 +24,28 @@ const urbanist = Urbanist({
   subsets: ["latin"],
 });
 
-const emilysCandy = Emilys_Candy({
-  variable: "--font-emilys-candy",
+// const emilysCandy = Emilys_Candy({
+//   variable: "--font-emilys-candy",
+//   subsets: ["latin"],
+//   weight: ["400"],
+// });
+
+const yesevaOne = Yeseva_One({
+  variable: "--font-yeseva-one",
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const georama = Georama({
+  variable: "--font-georama",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["400", "900"],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +77,7 @@ export default async function RootLayout({
       <QueryProvider>
         <BugReportProvider>
           <body
-            className={`${urbanist.variable} ${emilysCandy.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
+            className={`${urbanist.variable} ${yesevaOne.variable} ${georama.variable} ${playfairDisplay.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
           >
             <NextTopLoader
               color="var(--color-primary)"

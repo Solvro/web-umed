@@ -18,12 +18,17 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden pb-8">
       <HeroSection>
-        <span className="font-emilys-candy text-primary mt-4 overflow-hidden md:text-[90px] lg:text-[96px]">
-          Zdrowie Gra
-        </span>
-        <span className="font-emilys-candy text-primary mt-2 text-[37px] md:text-[55px] lg:text-[64px]">
-          Pierwsze Skrzypce
-        </span>
+        <div className="flex w-fit flex-col items-center">
+          <span className="text-accent mt-4 overflow-hidden font-serif md:text-[90px] lg:text-[96px]">
+            Zdrowie
+          </span>
+          <span className="text-accent font-alt text-[21px] md:text-[45px] lg:text-[52px]">
+            Gra Pierwsze
+          </span>
+          <span className="text-primary font-thicc text-[33px] font-black md:text-[70px] lg:text-[82px]">
+            Skrzypce
+          </span>
+        </div>
         <div className="mb-85 ml-0 lg:mb-0 lg:ml-12">
           <Button
             asChild
