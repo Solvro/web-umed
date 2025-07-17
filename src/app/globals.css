@@ -124,30 +124,36 @@
   }
 }
 
-.fluid-button {
-  position: relative;
-  overflow: hidden;
-  transition:
-    background-color 0.8s ease,
-    color 0.8s ease;
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--color-primary);
-    border-radius: 50%;
-    transform: translate(-50%, 100%);
+@layer utilities {
+  .fluid-button {
+    position: relative;
+    overflow: hidden;
     transition:
-      width 0.8s ease,
-      height 0.8s ease,
-      transform 0.8s ease;
+      background-color 0.8s ease,
+      color 0.8s ease;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transform: translate(-50%, 100%);
+      transition:
+        width 0.8s ease,
+        height 0.8s ease,
+        transform 0.8s ease;
+    }
+    &:hover::before {
+      transform: translate(-50%, -50%);
+      width: 300%;
+      height: 300%;
+    }
   }
-  &:hover::before {
-    transform: translate(-50%, -50%);
-    width: 300%;
-    height: 300%;
+
+  .bg-faded-gradient {
+    @apply from-primary/4 via-primary/12 to-primary/20 bg-radial from-25% via-90%;
   }
 }
