@@ -2,22 +2,8 @@ import { NewsContainer } from "../news-container";
 
 export function NewsSection() {
   return (
-    <div className="bg-primary relative flex items-center justify-center shadow-xl lg:p-20 lg:pt-30">
-      <svg
-        viewBox="0 0 1536 200"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0"
-      >
-        <path
-          fill="white"
-          d="M 0 200 C 309.20000000000005 200 463.79999999999995 70 773 70 L 773 70 L 773 0 L 0 0 Z"
-        ></path>{" "}
-        <path
-          fill="white"
-          d="M 772 70 C 1073.6 70 1224.4 200 1526 200 L 1526 200 L 1526 0 L 772 0 Z"
-        ></path>{" "}
-      </svg>
-      <div className="flex w-full flex-col p-12">
+    <div className="bg-faded-gradient relative flex items-center justify-center bg-white shadow-xl lg:pt-30">
+      <div className="bg-primary flex w-full flex-col p-12 sm:[clip-path:ellipse(95%_100%_at_50%_100%)] lg:px-20 lg:[clip-path:ellipse(70%_100%_at_50%_100%)]">
         <h1 className="text-primary-foreground mt-10 mb-20 text-center text-4xl lg:mt-0">
           Aktualności
         </h1>
