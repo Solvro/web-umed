@@ -23,7 +23,7 @@ export function AboutGoals() {
         alt="Pressure example"
         width={700}
         height={700}
-        className="absolute right-0 bottom-0 z-1 h-[400px] w-[400px] object-contain lg:-top-20 lg:-right-40 lg:h-[700px] lg:w-[700px]"
+        className="absolute right-0 bottom-0 z-10 h-[400px] w-[400px] object-contain lg:-top-20 lg:-right-40 lg:h-[700px] lg:w-[700px]"
       />
     </div>
   );

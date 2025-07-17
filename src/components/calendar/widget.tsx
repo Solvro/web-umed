@@ -26,7 +26,7 @@ export function CalendarWidget({ events }: { events: CalendarEvent[] }) {
   return (
     <div
       className={cn(
-        "fixed top-[25%] right-0 z-10 overflow-x-hidden transition-transform duration-300",
+        "fixed top-[25%] right-0 z-20 overflow-x-hidden transition-transform duration-300",
         {
           "translate-x-[250px]": collapsed,
         },
