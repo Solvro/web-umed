@@ -10,7 +10,7 @@ export const sectionVariants = cva(
     variants: {
       variant: {
         default: "",
-        secondary: "bg-secondary",
+        secondary: "bg-secondary text-secondary-foreground",
         primary: "bg-primary text-primary-foreground",
       },
     },

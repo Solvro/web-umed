@@ -1,5 +1,6 @@
-import { formatDistance } from "date-fns";
+import { formatDate, formatDistance } from "date-fns";
 import { pl } from "date-fns/locale";
+import Link from "next/link";
 
 import {
   Tooltip,
@@ -25,20 +26,26 @@ export function NewsCard({ post }: { post: NewsPost }) {
     return timePassed;
   };
 
-  const createdDate = `Utworzono ${getFriendlyStringDate(post.date_created)}`;
+  const createdDate = (
+    <div className="bg-primary text-primary-foreground mx-auto w-fit rounded-full px-3">
+      {formatDate(new Date(post.date_created), "dd.MM.yyyy", {
+        locale: pl,
+      })}
+    </div>
+  );
   const updatedDate =
     post.date_updated &&
     `Edytowano ${getFriendlyStringDate(post.date_updated)}`;
 
   return (
-    <Card className="max-w-md gap-3 overflow-hidden rounded-lg p-0 text-lg">
-      <CardHeader className="pt-4">
+    <Card className="max-w-xs gap-3 overflow-hidden rounded-lg p-0">
+      <CardHeader className="pt-2">
         <span className="text-muted-foreground text-xs font-medium md:text-center md:text-sm">
           {updatedDate ? (
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <p className="cursor-pointer">{createdDate} </p>
+                  <div className="cursor-pointer">{createdDate}</div>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{updatedDate}</p>
@@ -46,20 +53,22 @@ export function NewsCard({ post }: { post: NewsPost }) {
               </Tooltip>
             </TooltipProvider>
           ) : (
-            <p>{createdDate}</p>
+            createdDate
           )}
         </span>
       </CardHeader>
-      <CardContent className="flex h-full w-full flex-col justify-between px-0">
-        <div
-          className="md:text-md line-clamp-6 w-full px-2 text-sm sm:px-6"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        <CardTitle className="bg-muted mt-4 w-full font-normal">
-          <h3 className="py-4 text-center sm:text-lg">{post.title}</h3>
-        </CardTitle>
-      </CardContent>
+      <Link href={`/news#${post.id}`}>
+        <CardContent className="flex h-full w-full flex-col justify-between px-0">
+          <div
+            className="md:text-md line-clamp-6 w-full px-2 text-sm sm:px-6"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+          <CardTitle className="text-primary mt-4 w-full bg-white px-2 font-normal">
+            <h3 className="py-4 text-center sm:text-lg">{post.title}</h3>
+          </CardTitle>
+        </CardContent>
+      </Link>
     </Card>
   );
 }

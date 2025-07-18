@@ -48,12 +48,11 @@ export default function Home() {
           priority
         />
       </HeroSection>
-
-      <Nutshell />
-      <AboutEvent />
-      <AboutApp />
-      <AboutGoals />
       <NewsSection />
+      <AboutEvent />
+      <Nutshell />
+      <AboutGoals />
+      <AboutApp />
       <AboutUs />
     </div>
   );

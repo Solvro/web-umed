@@ -21,7 +21,7 @@ export const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost:
-          "hover:bg-primary hover:text-primary-foreground dark:hover:bg-primary",
+          "hover:bg-secondary/90 hover:text-primary-foreground dark:hover:bg-secondary/90",
         link: "text-primary underline-offset-4 hover:underline",
         fluid:
           "relative overflow-hidden hover:bg-primary text-primary transition-colors duration-800 [&::before]:content-[''] [&::before]:absolute [&::before]:z-0 [&::before]:bottom-0 [&::before]:left-1/2 [&::before]:w-0 [&::before]:h-0 [&::before]:bg-primary [&::before]:rounded-full [&::before]:transform [&::before]:translate-x-[-50%] [&::before]:translate-y-full [&::before]:transition-[width,height,transform] [&::before]:duration-800 hover:[&::before]:translate-y-[-50%] hover:[&::before]:w-[300%] hover:[&::before]:h-[300%] hover:text-white",

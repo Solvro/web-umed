@@ -11,8 +11,7 @@ export function HeroSection({ children }: { children: ReactNode }) {
       className={cn(
         sectionVariants({
           variant: "default",
-          className:
-            "from-primary/4 via-primary/12 to-primary/20 bg-radial from-25% via-90%",
+          className: "bg-faded-gradient",
         }),
       )}
     >
