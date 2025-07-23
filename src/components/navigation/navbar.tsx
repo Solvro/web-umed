@@ -7,11 +7,11 @@ import Link from "next/link";
 import type { ComponentType } from "react";
 import { useEffect, useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import { PAGE_PATHS } from "@/config/constants";
 import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 
-import { Button } from "../ui/button";
 import { DownloadWidget } from "./download-widget";
 import { NavbarLink } from "./navbar-link";
 

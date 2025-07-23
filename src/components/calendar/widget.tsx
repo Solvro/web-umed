@@ -3,11 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import type { CalendarEvent } from "@/lib/types";
 import { cn } from "@/lib/utils";
-
-import { Button } from "../ui/button";
-import { Calendar } from "../ui/calendar";
 
 const twoPadded = (value: number) =>
   value < 10 ? `0${value.toString()}` : value.toString();
