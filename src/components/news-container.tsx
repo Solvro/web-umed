@@ -40,7 +40,7 @@ export async function NewsContainer() {
     );
   }
   return (
-    <div className="grid grid-cols-1 place-items-center gap-6 md:grid-cols-3">
+    <div className="mx-auto grid grid-cols-1 place-items-center gap-6 md:grid-cols-3">
       {posts.slice(0, POSTS_TO_SHOW).map((post) => (
         <NewsCard key={post.id} post={post} />
       ))}
