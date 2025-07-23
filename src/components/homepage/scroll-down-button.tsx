@@ -13,7 +13,10 @@ export function ScrollDownButton() {
       onClick={() => {
         const newsSection = document.querySelector(`#${NEWS_SECTION_ID}`);
         if (newsSection == null) {
-          throw new Error("News section not found, please update the ID");
+          console.error(
+            "Invariant failed in ScrollDownButton - news section not found",
+          );
+          return;
         }
         newsSection.scrollIntoView({ behavior: "smooth" });
       }}
