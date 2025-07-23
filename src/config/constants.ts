@@ -26,3 +26,5 @@ export const QUERY_KEYS = {
 export const REPORT_FORM_URL =
   process.env.BUG_FORM_URL ??
   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2xwpWLh8fPizL-ik_uSEOmppCPCRiF87Wu0vli1ElLurVYA/formResponse";
+
+export const NEWS_SECTION_ID = "news-section";
