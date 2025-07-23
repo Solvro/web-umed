@@ -14,19 +14,19 @@ export function AboutApp() {
         <path
           d="M 0 67 C 226.5 67 226.5 149 453 149 L 453 149 L 453 0 L 0 0 Z"
           fill="white"
-        ></path>{" "}
+        />
         <path
           d="M 452 149 C 740 149 740 11 1028 11 L 1028 11 L 1028 0 L 452 0 Z"
           fill="white"
-        ></path>{" "}
+        />
         <path
           d="M 1027 11 C 1276.5 11 1276.5 103 1526 103 L 1526 103 L 1526 0 L 1027 0 Z"
           fill="white"
-        ></path>
+        />
       </svg>
       <div className="mt-20 mb-80 flex flex-col lg:mt-5 lg:mb-0 lg:ml-20 lg:w-1/2">
         <h1 className="text-primary-foreground text-start text-4xl">
-          O aplikacji
+          Aplikacja
         </h1>
         <p className="text-primary-foreground mt-4 mr-4 text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas

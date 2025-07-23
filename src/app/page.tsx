@@ -3,12 +3,10 @@ import Link from "next/link";
 
 import { HeroSection } from "@/components/hero";
 import { AboutApp } from "@/components/homepage/about-app";
-import { AboutEvent } from "@/components/homepage/about-event";
-import { AboutGoals } from "@/components/homepage/about-goals";
+import { AboutEventSection } from "@/components/homepage/about-event";
 import { AboutUs } from "@/components/homepage/about-us";
 import { EventCountdown } from "@/components/homepage/countdown";
 import { NewsSection } from "@/components/homepage/news-section";
-import { Nutshell } from "@/components/homepage/nutshell";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -49,9 +47,7 @@ export default function Home() {
         />
       </HeroSection>
       <NewsSection />
-      <AboutEvent />
-      <Nutshell />
-      <AboutGoals />
+      <AboutEventSection />
       <AboutApp />
       <AboutUs />
     </div>

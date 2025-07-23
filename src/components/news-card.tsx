@@ -38,7 +38,7 @@ export function NewsCard({ post }: { post: NewsPost }) {
     `Edytowano ${getFriendlyStringDate(post.date_updated)}`;
 
   return (
-    <Card className="max-w-xs gap-3 overflow-hidden rounded-lg p-0">
+    <Card className="max-w-sm gap-3 overflow-hidden rounded-2xl p-0">
       <CardHeader className="pt-2">
         <span className="text-muted-foreground text-xs font-medium md:text-center md:text-sm">
           {updatedDate ? (
@@ -60,7 +60,7 @@ export function NewsCard({ post }: { post: NewsPost }) {
       <Link href={`/news#${post.id}`}>
         <CardContent className="flex h-full w-full flex-col justify-between px-0">
           <div
-            className="md:text-md line-clamp-6 w-full px-2 text-sm sm:px-6"
+            className="line-clamp-6 w-full px-2 text-sm sm:px-6 md:text-base lg:text-lg xl:line-clamp-8"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
