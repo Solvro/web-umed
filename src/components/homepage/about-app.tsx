@@ -43,9 +43,9 @@ export function AboutApp() {
           className="-mb-[20%] hidden translate-x-[10%] -translate-y-[20%] object-contain lg:block"
         />
         <div className="px-10 lg:px-0">
-          <h1 className="text-primary-foreground mt-10 text-start text-4xl lg:mt-0 lg:text-6xl">
+          <h2 className="text-primary-foreground mt-10 text-start text-4xl lg:mt-0 lg:text-6xl">
             Aplikacja
-          </h1>
+          </h2>
           <div className="text-primary-foreground mt-4 mr-10 max-w-lg text-lg lg:text-xl">
             <p>
               Dołącz do wydarzenia i wyrusz na spacer po różnych trasach
