@@ -7,17 +7,15 @@ import { NewsCard } from "./news-card";
 const POSTS_TO_SHOW = 3;
 
 export async function fetchNewsPosts() {
-  let posts;
-
   try {
-    const response = await fetchData<{ data: NewsPost[] }>("items/news");
-    posts = response.data.filter((post) => post.status === "published");
+    const posts = await fetchData<{ data: NewsPost[] }>(
+      "items/news?filter[status]=published",
+    );
+    return posts.data;
   } catch (error) {
     console.error("Error fetching news posts:", error);
     return null;
   }
-
-  return posts;
 }
 
 export async function NewsContainer() {
