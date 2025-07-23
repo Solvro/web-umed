@@ -7,6 +7,7 @@ import { AboutEventSection } from "@/components/homepage/about-event";
 import { AboutUs } from "@/components/homepage/about-us";
 import { EventCountdown } from "@/components/homepage/countdown";
 import { NewsSection } from "@/components/homepage/news-section";
+import { DoubleQuaver, Quaver } from "@/components/notes";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -16,7 +17,10 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden pb-8">
       <HeroSection>
-        <div className="flex w-fit flex-col items-center">
+        <div className="relative flex w-fit flex-col items-center">
+          <DoubleQuaver className="absolute top-0 -left-7 hidden size-16 -translate-x-1/2 -translate-y-1/2 rotate-[17deg] transform sm:block" />
+          <DoubleQuaver className="absolute top-0 -right-4 size-16 translate-x-full -translate-y-1/4 rotate-[17deg] transform sm:hidden" />
+
           <span className="text-accent mt-4 overflow-hidden font-serif md:text-[90px] lg:text-[96px]">
             Zdrowie
           </span>
@@ -26,6 +30,8 @@ export default function Home() {
           <span className="text-primary font-thicc text-[33px] font-black md:text-[70px] lg:text-[82px]">
             Skrzypce
           </span>
+
+          <Quaver className="absolute top-1/2 -right-48 hidden size-20 translate-y-1/2 -rotate-[20deg] transform xl:block" />
         </div>
         <div className="mb-85 ml-0 lg:mb-0 lg:ml-12">
           <Button
