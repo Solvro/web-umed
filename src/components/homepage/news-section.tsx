@@ -1,7 +1,7 @@
+import { NewsContainer } from "@/components/news-container";
+import { Quaver } from "@/components/notes";
 import { NEWS_SECTION_ID } from "@/config/constants";
 
-import { NewsContainer } from "../news-container";
-import { Quaver } from "../notes";
 import { ScrollDownButton } from "./scroll-down-button";
 
 export function NewsSection() {

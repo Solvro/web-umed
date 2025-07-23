@@ -1,7 +1,8 @@
 import { FrownIcon } from "lucide-react";
 
-import { fetchData } from "../lib/api";
-import type { NewsPost } from "../lib/types";
+import { fetchData } from "@/lib/api";
+import type { NewsPost } from "@/lib/types";
+
 import { NewsCard } from "./news-card";
 
 const POSTS_TO_SHOW = 3;
