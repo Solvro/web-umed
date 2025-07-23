@@ -50,7 +50,7 @@ export function ContactForm() {
             },
           ),
         )}
-        className="max-w-screen-sm space-y-3"
+        className="space-y-3"
       >
         <div className="grid grid-cols-1 place-items-start gap-2 sm:grid-cols-2">
           <TextField

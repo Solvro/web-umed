@@ -24,7 +24,7 @@ export function Contact() {
               </a>
             </div>
           </div>
-          <div>
+          <div className="sm:px-10 md:px-20 lg:px-0">
             <h2 className="mb-6 text-2xl">Formularz kontaktowy</h2>
             <ContactForm />
           </div>
