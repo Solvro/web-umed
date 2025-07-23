@@ -22,7 +22,7 @@ function SectionContent({
 
 export function AboutEventSection() {
   return (
-    <div className="mb-10 grid grid-cols-1 grid-rows-1 overflow-hidden p-10 lg:grid-cols-2 lg:p-20 lg:pr-0">
+    <div className="relative mb-10 grid grid-cols-1 grid-rows-1 p-10 lg:grid-cols-2 lg:p-20 lg:pr-0">
       <div className="flex flex-col text-base sm:text-xl lg:ml-20 lg:text-2xl xl:mr-20 xl:ml-50">
         <h2 className="text-primary text-start text-3xl sm:text-6xl">
           O wydarzeniu
@@ -55,8 +55,8 @@ export function AboutEventSection() {
       <Image
         src={violinImage}
         alt="Violin example"
-        width={1000}
-        className="hidden translate-x-[10%] scale-150 -rotate-30 lg:block"
+        width={1400}
+        className="absolute -top-50 -right-[40%] -z-10 hidden -rotate-30 lg:inline xl:left-[45%]"
       />
     </div>
   );
