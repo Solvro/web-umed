@@ -1,5 +1,3 @@
-"use client";
-
 import { NEWS_SECTION_ID } from "@/config/constants";
 
 import { NewsContainer } from "../news-container";
@@ -13,9 +11,9 @@ export function NewsSection() {
         <ScrollDownButton />
         <div
           id={NEWS_SECTION_ID}
-          className="bg-primary flex w-full scroll-mt-30 flex-col p-12 sm:[clip-path:ellipse(95%_100%_at_50%_100%)] lg:px-20 lg:[clip-path:ellipse(70%_100%_at_50%_100%)]"
+          className="bg-primary flex w-full scroll-mt-14 flex-col p-12 sm:[clip-path:ellipse(95%_100%_at_50%_100%)] lg:px-20 lg:[clip-path:ellipse(70%_100%_at_50%_100%)]"
         >
-          <h2 className="text-primary-foreground mt-10 mb-20 text-center text-4xl lg:mt-0 lg:text-6xl">
+          <h2 className="text-primary-foreground mt-4 mb-6 text-center text-4xl sm:mt-10 sm:mb-20 lg:mt-0 lg:text-6xl">
             Aktualności
           </h2>
           <NewsContainer />
