@@ -27,21 +27,3 @@ function NoteIcon(icon: any) {
 
 export const Quaver = NoteIcon(QuaverIcon);
 export const DoubleQuaver = NoteIcon(DoubleQuaverIcon);
-
-// export function Quaver(props: Props) {
-//   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-//   return <Image src={QuaverIcon} alt="Ozdobna nutka" {...props} aria-hidden />;
-// }
-
-// export function DoubleQuaver({ className, ...props }: Props) {
-//   return (
-//     <Image
-//       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-//       src={DoubleQuaverIcon}
-//       alt="Ozdobna nutka"
-//       {...props}
-//       className={cn("pointer-events-none flex-shrink-0", className)}
-//       aria-hidden
-//     />
-//   );
-// }
