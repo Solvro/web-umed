@@ -32,9 +32,9 @@ function Waves() {
 
 export function AboutApp() {
   return (
-    <div className="shadow-xl lg:-translate-y-40">
+    <div className="shadow-xl">
       <Waves />
-      <div className="bg-primary grid place-items-center pb-10 lg:grid-cols-2">
+      <div className="bg-primary grid justify-items-center pb-10 lg:grid-cols-2">
         <Image
           src={mobileAppImage}
           alt="Mobile app example"
@@ -42,7 +42,7 @@ export function AboutApp() {
           // negative margin to account for excessive padding in the original png
           className="-mb-[20%] hidden translate-x-[10%] -translate-y-[20%] object-contain lg:block"
         />
-        <div className="px-10 lg:px-0">
+        <div className="z-10 px-10 lg:-mt-10 lg:px-0 xl:-mt-[10%] 2xl:-ml-[10%]">
           <h2 className="text-primary-foreground mt-10 text-start text-4xl lg:mt-0 lg:text-6xl">
             Aplikacja
           </h2>
