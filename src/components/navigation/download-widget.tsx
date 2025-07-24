@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function DownloadWidget() {
   return (
-    <div className="bg-primary relative -top-5 right-6 flex h-40 items-end justify-center rounded-b-2xl sm:right-0">
+    <div className="bg-primary relative -top-5 right-6 flex h-40 items-end justify-center rounded-b-2xl shadow-xl sm:right-0">
       <Link
         href="/download"
         className={cn(
