@@ -1,6 +1,9 @@
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import solvroLogo from "@/../public/solvro.svg";
 import { FOOTER_LINKS } from "@/config/constants";
 
 import { BugFormButton } from "./bug-form-button";
@@ -65,15 +68,24 @@ export function Footer() {
           </FooterLink>
         </FooterSection>
       </div>
-      <div className="bg-secondary-foreground/20 text-primary-foreground/85">
+      <div className="bg-background text-foreground">
         <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
-          <span>&copy; {new Date().getFullYear()} Solvro</span>
+          <span>&copy; {new Date().getFullYear()} KN Solvro</span>
           <Link
-            href="https://solvro.pl/"
-            className="underline-offset-4 hover:underline"
+            href="https://solvro.pwr.edu.pl?utm_source=umed&utm_medium=footer"
+            className="hover:border-foreground ease flex items-center gap-1 border-b border-transparent underline-offset-4 transition-colors"
             target="_blank"
           >
-            Made with ❤️ by&nbsp;Solvro
+            Made with ❤️ by{" "}
+            <span>
+              <Image
+                alt="Logo KN Solvro"
+                src={solvroLogo as StaticImageData}
+                height={18}
+                aria-hidden
+              />{" "}
+            </span>
+            Solvro
           </Link>
         </div>
       </div>
