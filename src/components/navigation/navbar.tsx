@@ -66,9 +66,12 @@ export function NavigationBar() {
           alt="Logo Zdrowie Gra Pierwsze Skrzypce"
           width={112}
           height={112}
-          className={cn("transition-all duration-300", {
-            "size-24 text-sm": scrolled,
-          })}
+          className={cn(
+            "opacity-0 transition-all duration-300 md:opacity-100",
+            {
+              "size-24 text-sm opacity-100": scrolled,
+            },
+          )}
         />
       </Link>
       <Button
