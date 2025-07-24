@@ -13,8 +13,8 @@ export const CONTACT_LINKS = {
 };
 
 export const PAGE_PATHS = {
-  news: "Aktualności",
   about: "O wydarzeniu",
+  news: "Aktualności",
   lifestyle: "Profilaktyka",
   results: "Wyniki badań",
 };

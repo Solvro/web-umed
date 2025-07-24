@@ -3,10 +3,13 @@
 import type { ClassValue } from "clsx";
 import type { LucideProps } from "lucide-react";
 import { Menu, X } from "lucide-react";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
 import { useEffect, useState } from "react";
 
+import logo from "@/../public/logo.svg";
 import { Button } from "@/components/ui/button";
 import { PAGE_PATHS } from "@/config/constants";
 import { useScroll } from "@/hooks/use-scroll";
@@ -51,25 +54,22 @@ export function NavigationBar() {
   return (
     <div
       className={cn(
-        "absolute left-0 z-30 mb-10 flex h-24 w-full items-center justify-between gap-4 px-8 text-2xl transition-all duration-300 sm:px-20",
+        "absolute left-0 z-30 mb-10 flex h-24 w-full items-center justify-between gap-4 pr-8 pl-2 text-2xl transition-all duration-300 sm:px-20",
         {
-          "bg-primary fixed top-0 shadow-lg": scrolled,
+          "bg-background fixed top-0 shadow-xl": scrolled,
         },
       )}
     >
-      <Link
-        href="/"
-        aria-label="Wróć do strony głównej"
-        className={cn(
-          "bg-muted grid place-items-center rounded-full transition-all duration-300",
-          {
-            "size-24 px-6 text-xl": !scrolled,
-            "size-16 px-4 text-sm": scrolled,
-          },
-        )}
-      >
-        {/* TODO: logo */}
-        ZGPS
+      <Link href="/" aria-label="Wróć do strony głównej">
+        <Image
+          src={logo as StaticImageData}
+          alt="Logo Zdrowie Gra Pierwsze Skrzypce"
+          width={112}
+          height={112}
+          className={cn("transition-all duration-300", {
+            "size-24 text-sm": scrolled,
+          })}
+        />
       </Link>
       <Button
         className="fixed top-0 right-0 z-30 size-8 cursor-pointer bg-transparent p-8! text-3xl shadow-none lg:hidden"
@@ -86,9 +86,7 @@ export function NavigationBar() {
       >
         <MenuButton
           as={Menu}
-          className={cn("text-foreground/50", {
-            "text-background": scrolled,
-          })}
+          className="text-foreground/50"
           hidden={!collapsed}
         />
         <MenuButton as={X} className="text-background" hidden={collapsed} />
@@ -104,7 +102,7 @@ export function NavigationBar() {
         )}
       >
         {Object.entries(PAGE_PATHS).map(([path, label]) => (
-          <NavbarLink key={path} path={path} isFixed={scrolled}>
+          <NavbarLink key={path} path={path}>
             {label}
           </NavbarLink>
         ))}
