@@ -6,6 +6,12 @@ export const FOOTER_LINKS = {
   contactMail: "john.doe@pwr.edu.pl",
 };
 
+export const CONTACT_LINKS = {
+  solvro: "https://solvro.pwr.edu.pl/contact",
+  wca: "https://www.wroclaw.pl/akademicki-wroclaw/kontakt-wca",
+  knChorobSerca: "https://www.facebook.com/100049256529819",
+};
+
 export const PAGE_PATHS = {
   news: "Aktualności",
   about: "O wydarzeniu",
