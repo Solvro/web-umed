@@ -17,3 +17,15 @@ export interface CalendarEvent extends Entity {
   date: string;
   description: string;
 }
+
+export type SocialLinkType = "www" | "github" | "facebook" | "instagram";
+
+export interface Organization {
+  name: string;
+  description: string;
+  contactUrl: string;
+}
+
+export interface OrganizationWithSocials extends Organization {
+  socials: Partial<Record<SocialLinkType, string>>;
+}

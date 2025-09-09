@@ -1,16 +1,40 @@
+import type { Organization, OrganizationWithSocials } from "@/lib/types";
+
 export const API_URL = "https://cms.umed.solvro.pl";
 
-export const FOOTER_LINKS = {
-  facebook: "https://facebook.com/#", // TODO: update
-  instagram: "https://instagram.com/#", // TODO: update
-  contactMail: "komunikacja@umw.edu.pl",
-} as const;
+export const organizations = {
+  solvro: {
+    name: "KN Solvro",
+    description:
+      "Jesteśmy strategicznym kołem naukowym Politechniki Wrocławskiej, skupiającym studentów pasjonujących się nowoczesnymi technologiami. Działamy jak software house – członkowie rozwijają aplikacje, systemy i narzędzia wspierające życie akademickie, m.in. aplikację ToPWR czy platformę Eventownik. Koło stawia na praktyczną naukę poprzez realne projekty open‑source, hackathony i współpracę z partnerami z branży IT. Solvro kładzie nacisk na rozwój zarówno umiejętności technicznych (programowanie, DevOps, UX), jak i miękkich – zarządzanie projektami czy praca zespołowa. Jest miejscem, gdzie teoria łączy się z praktyką, a członkowie zdobywają doświadczenie cenione w przyszłej karierze zawodowej.",
+    contactUrl:
+      "https://solvro.pwr.edu.pl/contact?utm_source=umed&utm_medium=contact",
+    socials: {
+      www: "https://solvro.pwr.edu.pl?utm_source=umed&utm_medium=footer",
+      github: "https://github.com/Solvro",
+      facebook: "https://facebook.com/knsolvro",
+      instagram: "https://instagram.com/knsolvro",
+    },
+  },
+  sknChorobSerca: {
+    description:
+      "Studenckie Koło Naukowe Chorób Serca zrzesza studentów zainteresowanych fizjologią układu sercowo-naczyniowego i związanymi z nim schorzeniami. Organizujemy comiesięczne spotkania z ekspertami kardiologii, podczas których omawiamy jednostki chorobowe i nowoczesne metody wspomagania krążenia. Działamy naukowo – bierzemy udział w konferencjach, projektach badawczych i publikujemy wyniki w czasopismach. Prowadzimy warsztaty z resuscytacji, a członkowie zdobywają praktykę na Oddziale Intensywnej Terapii Kardiologicznej, ucząc się m.in. interpretacji EKG, analizy parametrów życiowych i podstawowych procedur medycznych.",
+    name: "SKN Chorób Serca",
+    contactUrl: "https://www.facebook.com/100049256529819",
+    socials: {
+      facebook: "https://www.facebook.com/100049256529819",
+      instagram: "https://www.instagram.com/#", // TODO: update
+    },
+  },
+  wca: {
+    name: "Wrocławskie Centrum Akademickie",
+    description:
+      "Wrocławskie Centrum Akademickie (WCA) to instytucja łącząca samorząd miasta z wrocławskim środowiskiem akademickim, wspierająca rozwój nauki, talentów i innowacji. Znane jest jako koordynator miejskiego programu stypendialnego, programu Visiting Professors oraz inicjator Akademii Młodych Uczonych i Artystów. WCA realizuje własne projekty dotyczące rynku pracy i polityki rozwoju gospodarczego, a także doradza uczelniom w zakresie współpracy z biznesem i otoczeniem społecznym. Projekt „Zdrowie gra pierwsze skrzypce” został dofinansowany ze środków programu FAST prowadzonego przez WCA.",
+    contactUrl: "https://www.wroclaw.pl/akademicki-wroclaw/kontakt-wca",
+  },
+} satisfies Record<string, Organization | OrganizationWithSocials>;
 
-export const CONTACT_LINKS = {
-  solvro: "https://solvro.pwr.edu.pl/contact",
-  wca: "https://www.wroclaw.pl/akademicki-wroclaw/kontakt-wca",
-  knChorobSerca: "https://www.facebook.com/100049256529819",
-} as const;
+export const CONTACT_EMAIL = "komunikacja@umw.edu.pl";
 
 export const ABOUT_EVENT_FRAGMENT = "about-event";
 
