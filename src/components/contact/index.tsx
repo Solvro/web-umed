@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { FOOTER_LINKS } from "@/config/constants";
+import { CONTACT_EMAIL } from "@/config/constants";
 
 import { ContactForm } from "./form";
 
@@ -22,10 +22,10 @@ export function Contact() {
                 <p>50-367&nbsp;Wrocław</p>
               </address>
               <Link
-                href={`mailto:${FOOTER_LINKS.contactMail}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="underline-offset-4 hover:underline"
               >
-                {FOOTER_LINKS.contactMail}
+                {CONTACT_EMAIL}
               </Link>
             </div>
           </div>

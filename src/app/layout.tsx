@@ -12,6 +12,7 @@ import { Toaster } from "sonner";
 
 import { CalendarWidget } from "@/components/calendar/widget";
 import { Footer } from "@/components/footer";
+import { organizations } from "@/config/constants";
 import { BugReportProvider } from "@/hooks/use-bug-form";
 import { fetchData } from "@/lib/api";
 import { QueryProvider } from "@/lib/query-client";
@@ -50,8 +51,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "UMed × Solvro – „Zdrowie Gra Pierwsze Skrzypce”",
-  description:
-    "Projekt „Zdrowie Gra Pierwsze Skrzypce” we Wrocławiu bada wpływ muzyki na wydolność serca. Sprawdź, jak Uniwersytet Medyczny i KN Solvro łączą naukę i dźwięki w innowacyjnych badaniach zdrowia!",
+  description: `Projekt „Zdrowie Gra Pierwsze Skrzypce” we Wrocławiu bada wpływ muzyki na wydolność serca. Sprawdź, jak Uniwersytet Medyczny i ${organizations.solvro.name} łączą naukę i dźwięki w innowacyjnych badaniach zdrowia!`,
   icons: [{ url: "/favicon.svg", type: "image/svg" }],
 };
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import violinImage from "@/../public/skrzypce.png";
-import { ABOUT_EVENT_FRAGMENT } from "@/config/constants";
+import { ABOUT_EVENT_FRAGMENT, organizations } from "@/config/constants";
 
 function SectionContent({
   header,
@@ -32,16 +32,20 @@ export function AboutEventSection() {
           O wydarzeniu
         </h2>
         <p className="mt-4 sm:mt-10">
-          &bdquo;Zdrowie gra pierwsze skrzypce&rdquo; to projekt z inicjatywy KN
-          Chorób Serca oraz KN Solvro, którego celem jest zbadanie wpływu
-          muzykoterapii na pracę serca. Biorąc udział w wydarzeniu, spędzisz
-          czas na świeżym powietrzu, odkryjesz ciekawe zakątki Wrocławia, a
-          przede wszystkim – zadbasz o swoje zdrowie!
+          &bdquo;Zdrowie gra pierwsze skrzypce&rdquo; to projekt z inicjatywy{" "}
+          {organizations.sknChorobSerca.name} oraz {organizations.solvro.name},
+          którego celem jest zbadanie wpływu muzykoterapii na pracę serca.
+          Biorąc udział w wydarzeniu, spędzisz czas na świeżym powietrzu,
+          odkryjesz ciekawe zakątki Wrocławia, a przede wszystkim – zadbasz o
+          swoje zdrowie!
         </p>
         <SectionContent header="Cele wydarzenia">
           Naszym głównym celem jest promocja zdrowego trybu życia, łącząc
           elementy ruchu, muzyki i zabawy. Podczas wydarzenia prowadzimy pomiary
-          tętna u ochotników,
+          tętna u ochotników, aby zbadać, jak różne style muzyczne wpływają na
+          pracę serca. Wyniki tych badań mogą przyczynić się do lepszego
+          zrozumienia roli muzykoterapii w profilaktyce i leczeniu chorób układu
+          krążenia.
         </SectionContent>
         <SectionContent header="Przebieg wydarzenia">
           Całe wydarzenie jest powiązane z aplikacją mobilną, która przedstawia
