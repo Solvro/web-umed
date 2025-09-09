@@ -1,3 +1,4 @@
+import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { PAGE_PATHS } from "@/config/constants";
 
@@ -5,7 +6,10 @@ export default function LifestylePage() {
   return (
     <div>
       <HeroSection>{PAGE_PATHS.lifestyle}</HeroSection>
-      <div className="space-y-4 p-5 sm:p-15 lg:p-30">
+      <ContentSection
+        className="space-y-4"
+        heading="Jak dbać o zdrowy styl życia?"
+      >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris est
           urna, vulputate et justo vel, tempor dignissim tortor. Donec nisl
@@ -34,7 +38,7 @@ export default function LifestylePage() {
           id sollicitudin mauris vehicula quis. Vestibulum est metus, tristique
           id eleifend eget, imperdiet sit amet nibh.
         </p>
-      </div>
+      </ContentSection>
     </div>
   );
 }

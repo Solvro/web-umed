@@ -7,7 +7,7 @@ import solvroLogo from "@/../public/solvro.svg";
 import wcaLogo from "@/../public/wca.png";
 import { DoubleQuaver, Quaver } from "@/components/notes";
 import { Button } from "@/components/ui/button";
-import { organizations } from "@/config/constants";
+import { ORGANIZATIONS } from "@/config/constants";
 import type { Organization } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -91,18 +91,18 @@ export function AboutUs() {
       </h2>
 
       <AboutUsRow
-        organization={organizations.sknChorobSerca}
+        organization={ORGANIZATIONS.sknChorobSerca}
         image={
           <DoubleQuaver className="absolute -bottom-4 left-0 -z-10 size-10 -translate-x-full rotate-12 transform md:size-12 lg:size-16" />
         }
       />
       <AboutUsRow
-        organization={organizations.solvro}
+        organization={ORGANIZATIONS.solvro}
         reversed
         image={
           <>
             <Image
-              alt={`Logo ${organizations.solvro.name}`}
+              alt={`Logo ${ORGANIZATIONS.solvro.name}`}
               src={solvroLogo as StaticImageData}
               height={400}
               className="bg-background h-full w-full p-10 shadow-xl"
@@ -114,7 +114,7 @@ export function AboutUs() {
       />
 
       <AboutUsRow
-        organization={organizations.wca}
+        organization={ORGANIZATIONS.wca}
         image={
           <>
             <Image
