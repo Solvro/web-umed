@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import solvroLogo from "@/../public/solvro.svg";
-import { PAGE_PATHS, organizations } from "@/config/constants";
+import { ORGANIZATIONS, PAGE_PATHS } from "@/config/constants";
 import type { OrganizationWithSocials, SocialLinkType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -99,12 +99,12 @@ export function Footer() {
               <BugFormButton />
             </li>
           </ul>
-          <SocialsSection organization={organizations.solvro} />
-          <SocialsSection organization={organizations.sknChorobSerca} />
+          <SocialsSection organization={ORGANIZATIONS.solvro} />
+          <SocialsSection organization={ORGANIZATIONS.sknChorobSerca} />
         </div>
-        <div className="mx-auto flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
+        <div className="mx-auto mt-4 flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
           <span>
-            &copy; {new Date().getFullYear()} {organizations.solvro.name}
+            &copy; {new Date().getFullYear()} {ORGANIZATIONS.solvro.name}
           </span>
           <FooterLink
             href="https://solvro.pwr.edu.pl?utm_source=umed&utm_medium=footer"
@@ -114,7 +114,7 @@ export function Footer() {
             Made with ❤️ by{" "}
             <span>
               <Image
-                alt={`Logo ${organizations.solvro.name}`}
+                alt={`Logo ${ORGANIZATIONS.solvro.name}`}
                 src={solvroLogo as StaticImageData}
                 height={18}
                 aria-hidden

@@ -21,12 +21,14 @@ export function ContentSection({
   heading,
   children,
   variant = "default",
+  className,
 }: {
   heading: ReactNode;
   children: ReactNode;
+  className?: string;
 } & VariantProps<typeof sectionVariants>) {
   return (
-    <section className={cn(sectionVariants({ variant }))}>
+    <section className={cn(sectionVariants({ variant }), className)}>
       <h2 className="mb-4 text-2xl">{heading}</h2>
       {children}
     </section>

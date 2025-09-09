@@ -2,7 +2,7 @@ import type { Organization, OrganizationWithSocials } from "@/lib/types";
 
 export const API_URL = "https://cms.umed.solvro.pl";
 
-export const organizations = {
+export const ORGANIZATIONS = {
   solvro: {
     name: "KN Solvro",
     description:
@@ -60,3 +60,9 @@ export const REPORT_FORM_URL =
   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2xwpWLh8fPizL-ik_uSEOmppCPCRiF87Wu0vli1ElLurVYA/formResponse";
 
 export const NEWS_SECTION_ID = "news-section";
+
+export const APP_DOWNLOAD_URLS = {
+  googlePlay:
+    "https://play.google.com/store/apps/details?id=com.solvro.mobile_umed",
+  appStore: "https://apps.apple.com/pl/app/umed/", // TODO: update the url
+};

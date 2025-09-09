@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import violinImage from "@/../public/skrzypce.png";
-import { ABOUT_EVENT_FRAGMENT, organizations } from "@/config/constants";
+import { ABOUT_EVENT_FRAGMENT, ORGANIZATIONS } from "@/config/constants";
 
 function SectionContent({
   header,
@@ -33,7 +33,7 @@ export function AboutEventSection() {
         </h2>
         <p className="mt-4 sm:mt-10">
           &bdquo;Zdrowie gra pierwsze skrzypce&rdquo; to projekt z inicjatywy{" "}
-          {organizations.sknChorobSerca.name} oraz {organizations.solvro.name},
+          {ORGANIZATIONS.sknChorobSerca.name} oraz {ORGANIZATIONS.solvro.name},
           którego celem jest zbadanie wpływu muzykoterapii na pracę serca.
           Biorąc udział w wydarzeniu, spędzisz czas na świeżym powietrzu,
           odkryjesz ciekawe zakątki Wrocławia, a przede wszystkim – zadbasz o
