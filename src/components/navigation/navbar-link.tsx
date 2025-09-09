@@ -15,10 +15,11 @@ export function NavbarLink({
 }) {
   const pathname = usePathname();
   const route = pathname.split("/").at(1);
+  const absolutePath = `/${path}`;
 
   return (
     <Link
-      href={`/${path}`}
+      href={absolutePath}
       className={cn(
         "text-background underline-offset-4 transition-colors duration-300 lg:border-l-2 lg:px-[23px] lg:text-xl lg:last:border-r-2 xl:px-8",
         {
@@ -28,6 +29,15 @@ export function NavbarLink({
             route !== path,
         },
       )}
+      onClick={(event_) => {
+        if (!path.startsWith("#") || route !== "") {
+          return;
+        }
+        event_.preventDefault();
+        document.querySelector(path)?.scrollIntoView({ behavior: "smooth" });
+        // use the Window API to perform shallow routing to keep the URL consistent
+        window.history.pushState(undefined, "", path);
+      }}
     >
       {children}
     </Link>
