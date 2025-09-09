@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { FOOTER_LINKS } from "@/config/constants";
 
 import { ContactForm } from "./form";
@@ -13,15 +15,18 @@ export function Contact() {
           <div>
             <h2 className="mb-6 text-2xl">Dane kontaktowe</h2>
             <div>
-              <p>Uniwersytet Medyczny</p>
-              <p>ul. Lorem Ipsum 42</p>
-              <p>08-324&nbsp;Wrocław</p>
-              <a
+              <address className="not-italic">
+                <p>Uniwersytet Medyczny</p>
+                <p>im. Piastów Śląskich we Wrocławiu</p>
+                <p>Wybrzeże Ludwika Pasteura 1</p>
+                <p>50-367&nbsp;Wrocław</p>
+              </address>
+              <Link
                 href={`mailto:${FOOTER_LINKS.contactMail}`}
                 className="underline-offset-4 hover:underline"
               >
                 {FOOTER_LINKS.contactMail}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="sm:px-10 md:px-20 lg:px-0">

@@ -1,23 +1,25 @@
 export const API_URL = "https://cms.umed.solvro.pl";
 
 export const FOOTER_LINKS = {
-  facebook: "https://facebook.com/#",
-  instagram: "https://instagram.com/#",
-  contactMail: "john.doe@pwr.edu.pl",
-};
+  facebook: "https://facebook.com/#", // TODO: update
+  instagram: "https://instagram.com/#", // TODO: update
+  contactMail: "komunikacja@umw.edu.pl",
+} as const;
 
 export const CONTACT_LINKS = {
   solvro: "https://solvro.pwr.edu.pl/contact",
   wca: "https://www.wroclaw.pl/akademicki-wroclaw/kontakt-wca",
   knChorobSerca: "https://www.facebook.com/100049256529819",
-};
+} as const;
+
+export const ABOUT_EVENT_FRAGMENT = "about-event";
 
 export const PAGE_PATHS = {
-  about: "O wydarzeniu",
+  [`#${ABOUT_EVENT_FRAGMENT}`]: "O wydarzeniu",
   news: "Aktualności",
   lifestyle: "Profilaktyka",
   results: "Wyniki badań",
-};
+} as const;
 
 export const MUTATION_KEYS = {
   REPORT_FORM: "reportForm",

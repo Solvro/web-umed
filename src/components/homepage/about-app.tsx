@@ -67,7 +67,7 @@ export function AboutApp() {
             className="mt-4 w-xs rounded-4xl py-6 text-2xl md:mt-8 lg:mt-14"
             variant="secondary"
           >
-            <Link href="/about">Pobierz aplikację!</Link>
+            <Link href="/download">Pobierz aplikację!</Link>
           </Button>
         </div>
       </div>
