@@ -18,13 +18,11 @@ export async function fetchData<T>(
       ...options.headers,
     };
   }
-  const response = await fetch(
-    isAbsolutePath(endpoint) ? endpoint : `${API_URL}/${endpoint}`,
-    {
-      ...options,
-      next: { revalidate: 60 },
-    },
-  );
+  const url = isAbsolutePath(endpoint) ? endpoint : `${API_URL}/${endpoint}`;
+  const response = await fetch(url, {
+    ...options,
+    next: { revalidate: 60 },
+  });
 
   let body: T | null = null;
 
@@ -35,7 +33,9 @@ export async function fetchData<T>(
   }
   if (!response.ok || body == null) {
     console.error("Response body:", JSON.stringify(body, null, 2));
-    throw new FetchError(response.statusText);
+    throw new FetchError(
+      `Received ${String(response.status)} ${response.statusText} when attempting to fetch ${url}`,
+    );
   }
 
   return body;

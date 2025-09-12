@@ -1,44 +1,62 @@
 import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
-import { PAGE_PATHS } from "@/config/constants";
+import { NoDataInfo } from "@/components/no-data-info";
+import { RichText } from "@/components/rich-text";
+import { PAGE_PATHS, USER_FIELDS_QUERY } from "@/config/constants";
+import { fetchData } from "@/lib/api";
+import type { Article } from "@/lib/types";
 
-export default function LifestylePage() {
+async function fetchArticles() {
+  try {
+    const articles = await fetchData<{ data: Article[] }>(
+      `items/articles?filter[status]=published&fields=*,${USER_FIELDS_QUERY}`,
+    );
+    return articles.data;
+  } catch (error) {
+    console.error("Error fetching articles:", error);
+    return null;
+  }
+}
+
+export default async function LifestylePage() {
+  const articles = await fetchArticles();
   return (
     <div>
       <HeroSection>{PAGE_PATHS.lifestyle}</HeroSection>
-      <ContentSection
-        className="space-y-4"
-        heading="Jak dbać o zdrowy styl życia?"
-      >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris est
-          urna, vulputate et justo vel, tempor dignissim tortor. Donec nisl
-          lorem, rutrum ac laoreet at, pellentesque eu urna. Donec non augue nec
-          ipsum sollicitudin lacinia. Quisque euismod libero libero, non posuere
-          enim gravida eu. Curabitur efficitur porttitor enim, a rutrum tellus
-          faucibus id. Phasellus porta enim ut velit cursus egestas. Nunc
-          elementum risus sed laoreet congue. Pellentesque tristique bibendum
-          placerat. Suspendisse bibendum, neque elementum aliquam commodo, est
-          magna vehicula turpis, sit amet rutrum mi arcu sit amet turpis.
-          Curabitur dapibus arcu eros, a bibendum metus laoreet ac. Etiam
-          elementum quam elit, quis tincidunt ipsum pellentesque ut. In hac
-          habitasse platea dictumst. In feugiat, arcu quis tincidunt porttitor,
-          arcu mauris hendrerit risus, sit amet tincidunt lacus nibh nec libero.
-          Vestibulum sed imperdiet mauris. Proin at purus mi.
-        </p>
-        <p>
-          Nullam vel justo tincidunt, efficitur libero ut, facilisis neque.
-          Suspendisse tempus, lectus eget hendrerit auctor, augue turpis
-          venenatis leo, id pharetra magna nulla nec elit. Maecenas vel augue ac
-          nisl lobortis elementum. Praesent consectetur dolor ut congue
-          vehicula. Donec in lobortis eros. Praesent ut ante non mi bibendum
-          porta vitae et odio. Quisque congue, mi non facilisis dapibus, nisi
-          libero dictum arcu, eu convallis neque eros non leo. Aliquam tincidunt
-          volutpat dictum. Quisque vitae sapien urna. Nullam commodo arcu massa,
-          id sollicitudin mauris vehicula quis. Vestibulum est metus, tristique
-          id eleifend eget, imperdiet sit amet nibh.
-        </p>
-      </ContentSection>
+      {articles == null ? (
+        <NoDataInfo name="artykułów" className="text-accent" />
+      ) : (
+        articles.map((article, index) => (
+          <ContentSection
+            heading={
+              <div id={article.id} className="mb-8 scroll-mt-30">
+                <div className="mb-2 flex items-center justify-between">
+                  <div className="sm:text-2xl">
+                    <span className="mr-2 text-balance sm:text-5xl">
+                      Artykuł {article.id}
+                    </span>
+                  </div>
+                  <span className="font-light">
+                    {new Date(article.date_created).toLocaleDateString()}
+                  </span>
+                </div>
+                <span className="sm:text-2xl">
+                  {article.user_created.first_name}{" "}
+                  {article.user_created.last_name}
+                </span>
+              </div>
+            }
+            key={article.id}
+            variant={index % 2 === 0 ? "default" : "primary"}
+          >
+            <RichText
+              content={article.content}
+              className="lg:columns-2"
+              invertColors={index % 2 === 1}
+            />
+          </ContentSection>
+        ))
+      )}
     </div>
   );
 }

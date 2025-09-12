@@ -1,6 +1,8 @@
 import { ContentSection } from "@/components/content-section";
 import { HeroSection } from "@/components/hero";
 import { fetchNewsPosts } from "@/components/news-container";
+import { NoDataInfo } from "@/components/no-data-info";
+import { RichText } from "@/components/rich-text";
 import { PAGE_PATHS } from "@/config/constants";
 
 export default async function NewsPage() {
@@ -9,7 +11,7 @@ export default async function NewsPage() {
     <div className="mb-10">
       <HeroSection>{PAGE_PATHS.news}</HeroSection>
       {posts == null ? (
-        <p>Brak aktualności</p>
+        <NoDataInfo name="aktualności" className="text-accent" />
       ) : (
         posts.map((post, index) => (
           <ContentSection
@@ -27,11 +29,11 @@ export default async function NewsPage() {
             key={post.id}
             variant={index % 2 === 0 ? "default" : "primary"}
           >
-            <div
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: post.content }}
+            <RichText
               className="lg:columns-2"
-            ></div>
+              content={post.content}
+              invertColors={index % 2 === 1}
+            />
           </ContentSection>
         ))
       )}

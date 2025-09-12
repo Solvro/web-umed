@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import type { NewsPost } from "@/lib/types";
 
+import { RichText } from "./rich-text";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export function NewsCard({ post }: { post: NewsPost }) {
@@ -59,10 +60,9 @@ export function NewsCard({ post }: { post: NewsPost }) {
       </CardHeader>
       <Link href={`/news#${post.id}`}>
         <CardContent className="flex h-full w-full flex-col justify-between px-0">
-          <div
+          <RichText
+            content={post.content}
             className="line-clamp-6 w-full px-2 text-sm sm:px-6 md:text-base lg:text-lg xl:line-clamp-8"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <CardTitle className="text-primary mt-4 w-full bg-white px-2 font-normal">
             <h3 className="py-4 text-center sm:text-lg">{post.title}</h3>

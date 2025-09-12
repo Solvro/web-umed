@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { navigateToElement } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 
 export function NavbarLink({
@@ -34,9 +35,7 @@ export function NavbarLink({
           return;
         }
         event_.preventDefault();
-        document.querySelector(path)?.scrollIntoView({ behavior: "smooth" });
-        // use the Window API to perform shallow routing to keep the URL consistent
-        window.history.pushState(undefined, "", path);
+        navigateToElement(path);
       }}
     >
       {children}
