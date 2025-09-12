@@ -11,6 +11,8 @@ import { EventCountdown } from "@/components/homepage/countdown";
 import { NewsSection } from "@/components/homepage/news-section";
 import { DoubleQuaver, Quaver } from "@/components/notes";
 import { Button } from "@/components/ui/button";
+import { ABOUT_EVENT_FRAGMENT } from "@/config/constants";
+import { navigateToElement } from "@/lib/helpers";
 
 export default function Home() {
   // TODO: Replace with next event date
@@ -42,8 +44,14 @@ export default function Home() {
                 asChild
                 className="mt-6 w-[200px] rounded-4xl py-5 text-sm md:mt-8 lg:mt-12 lg:w-[300px] lg:py-6 lg:text-lg"
                 variant="secondary"
+                onClick={(event_) => {
+                  event_.preventDefault();
+                  navigateToElement(`#${ABOUT_EVENT_FRAGMENT}`);
+                }}
               >
-                <Link href="/about">Dowiedz się więcej!</Link>
+                <Link href={`/#${ABOUT_EVENT_FRAGMENT}`}>
+                  Dowiedz się więcej!
+                </Link>
               </Button>
               <EventCountdown nextEventDate={nextEventDate} />
             </div>
