@@ -66,3 +66,7 @@ export const APP_DOWNLOAD_URLS = {
     "https://play.google.com/store/apps/details?id=com.solvro.mobile_umed",
   appStore: "https://apps.apple.com/pl/app/umed/", // TODO: update the url
 };
+
+/** A query to target a Directus CMS item's author data fields. */
+export const USER_FIELDS_QUERY =
+  "user_created.first_name,user_created.last_name,user_created.title,user_updated.first_name,user_updated.last_name,user_updated.title";
