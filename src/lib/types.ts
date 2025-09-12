@@ -1,19 +1,38 @@
-interface Entity {
-  id: string;
+interface User {
+  first_name: string;
+  last_name: string;
   title: string;
-  status: string;
-  user_created: string;
-  user_updated: string;
 }
 
-export interface NewsPost extends Entity {
+interface Entity {
+  id: string;
+  status: string;
+  user_created: User;
+  user_updated: User;
+}
+
+interface SortedEntity extends Entity {
   sort: number;
+}
+
+interface DatedEntity extends Entity {
   date_created: string;
   date_updated: string;
+}
+
+interface DatedSortedEntity extends DatedEntity, SortedEntity {}
+
+export interface Article extends DatedSortedEntity {
+  content: string;
+}
+
+export interface NewsPost extends DatedSortedEntity {
+  title: string;
   content: string;
 }
 
 export interface CalendarEvent extends Entity {
+  title: string;
   date: string;
   description: string;
 }

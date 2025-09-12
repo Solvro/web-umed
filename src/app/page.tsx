@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
-import Link from "next/link";
 
 import logo from "@/../public/logo.svg";
 import { HeroSection } from "@/components/hero";
@@ -8,11 +7,9 @@ import { AboutApp } from "@/components/homepage/about-app";
 import { AboutEventSection } from "@/components/homepage/about-event";
 import { AboutUs } from "@/components/homepage/about-us";
 import { EventCountdown } from "@/components/homepage/countdown";
+import { LearnMoreButton } from "@/components/homepage/learn-more-button";
 import { NewsSection } from "@/components/homepage/news-section";
 import { DoubleQuaver, Quaver } from "@/components/notes";
-import { Button } from "@/components/ui/button";
-import { ABOUT_EVENT_FRAGMENT } from "@/config/constants";
-import { navigateToElement } from "@/lib/helpers";
 
 export default function Home() {
   // TODO: Replace with next event date
@@ -40,19 +37,7 @@ export default function Home() {
               <Quaver className="absolute top-1/2 -right-48 hidden size-20 translate-y-1/2 -rotate-[20deg] transform xl:block" />
             </div>
             <div className="lg:ml-12">
-              <Button
-                asChild
-                className="mt-6 w-[200px] rounded-4xl py-5 text-sm md:mt-8 lg:mt-12 lg:w-[300px] lg:py-6 lg:text-lg"
-                variant="secondary"
-                onClick={(event_) => {
-                  event_.preventDefault();
-                  navigateToElement(`#${ABOUT_EVENT_FRAGMENT}`);
-                }}
-              >
-                <Link href={`/#${ABOUT_EVENT_FRAGMENT}`}>
-                  Dowiedz się więcej!
-                </Link>
-              </Button>
+              <LearnMoreButton />
               <EventCountdown nextEventDate={nextEventDate} />
             </div>
           </div>
