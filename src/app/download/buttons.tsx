@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ function DownloadButton({
   image,
   store,
 }: {
-  url: string;
+  url: Route;
   image: StaticImageData;
   store: "google play" | "app store";
 }) {

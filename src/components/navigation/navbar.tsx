@@ -13,6 +13,7 @@ import logo from "@/../public/logo.svg";
 import { Button } from "@/components/ui/button";
 import { PAGE_PATHS } from "@/config/constants";
 import { useScroll } from "@/hooks/use-scroll";
+import { typedEntries } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 
 import { DownloadWidget } from "./download-widget";
@@ -104,7 +105,7 @@ export function NavigationBar() {
           },
         )}
       >
-        {Object.entries(PAGE_PATHS).map(([path, label]) => (
+        {typedEntries(PAGE_PATHS).map(([path, label]) => (
           <NavbarLink key={path} path={path}>
             {label}
           </NavbarLink>

@@ -1,3 +1,5 @@
+import type { Route } from "next";
+
 import type { Organization, OrganizationWithSocials } from "@/lib/types";
 
 export const API_URL = "https://cms.umed.solvro.pl";
@@ -65,7 +67,7 @@ export const APP_DOWNLOAD_URLS = {
   googlePlay:
     "https://play.google.com/store/apps/details?id=com.solvro.mobile_umed",
   appStore: "https://apps.apple.com/pl/app/umed/", // TODO: update the url
-};
+} satisfies Record<string, Route>;
 
 /** A query to target a Directus CMS item's author data fields. */
 export const USER_FIELDS_QUERY =

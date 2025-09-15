@@ -1,4 +1,5 @@
 import { Globe } from "lucide-react";
+import type { Route } from "next";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import type { ReactNode } from "react";
 
 import solvroLogo from "@/../public/solvro.svg";
 import { ORGANIZATIONS, PAGE_PATHS } from "@/config/constants";
+import { typedEntries } from "@/lib/helpers";
 import type { OrganizationWithSocials, SocialLinkType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +21,7 @@ function FooterLink({
   label,
   className,
 }: {
-  href: string;
+  href: Route;
   target?: string;
   label?: string;
   children: ReactNode;
@@ -68,10 +70,10 @@ function SocialsSection({
       </h4>
       <p className="mt-4 mb-2">Zaobserwuj nas!</p>
       <ul className="flex items-center gap-5">
-        {Object.entries(organization.socials).map(([type, link]) => (
+        {typedEntries(organization.socials).map(([type, link]) => (
           <li key={`footer-link-${organization.name}-${type}`}>
             <FooterLink href={link} target="_blank">
-              <SocialsLogo type={type as SocialLinkType} />
+              <SocialsLogo type={type} />
             </FooterLink>
           </li>
         ))}
@@ -90,7 +92,7 @@ export function Footer() {
             <li>
               <FooterLink href="/">Strona główna</FooterLink>
             </li>
-            {Object.entries(PAGE_PATHS).map(([path, label]) => (
+            {typedEntries(PAGE_PATHS).map(([path, label]) => (
               <li key={`footer-link-page-${path}`}>
                 <FooterLink href={`/${path}`}>{label}</FooterLink>
               </li>
