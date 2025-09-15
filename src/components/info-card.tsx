@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 
 import { Avatar } from "@/components/ui/avatar";
@@ -7,7 +8,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 interface InfoCardProps {
   title: string;
   description: string;
-  link: string;
+  link: Route;
   icon: React.ReactNode;
 }
 

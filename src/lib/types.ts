@@ -1,3 +1,5 @@
+import type { Route } from "next";
+
 interface User {
   first_name: string;
   last_name: string;
@@ -42,9 +44,9 @@ export type SocialLinkType = "www" | "github" | "facebook" | "instagram";
 export interface Organization {
   name: string;
   description: string;
-  contactUrl: string;
+  contactUrl: Route;
 }
 
 export interface OrganizationWithSocials extends Organization {
-  socials: Partial<Record<SocialLinkType, string>>;
+  socials: Partial<Record<SocialLinkType, Route>>;
 }

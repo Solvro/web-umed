@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import type { PAGE_PATHS } from "@/config/constants";
 import { navigateToElement } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 
@@ -11,16 +12,15 @@ export function NavbarLink({
   path,
   children,
 }: {
-  path: string;
+  path: keyof typeof PAGE_PATHS;
   children: ReactNode;
 }) {
   const pathname = usePathname();
   const route = pathname.split("/").at(1);
-  const absolutePath = `/${path}`;
 
   return (
     <Link
-      href={absolutePath}
+      href={`/${path}`}
       className={cn(
         "text-background underline-offset-4 transition-colors duration-300 lg:border-l-2 lg:px-[23px] lg:text-xl lg:last:border-r-2 xl:px-8",
         {
