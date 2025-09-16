@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ComponentType } from "react";
 import { useEffect, useState } from "react";
 
@@ -44,6 +45,7 @@ function MenuButton({
 export function NavigationBar() {
   const [collapsed, setCollapsed] = useState(true);
   const { y: scrollY } = useScroll();
+  const pathname = usePathname();
   const scrolled = scrollY > 0;
 
   useEffect(() => {
@@ -68,7 +70,8 @@ export function NavigationBar() {
           width={112}
           height={112}
           className={cn(
-            "opacity-0 transition-all duration-300 md:opacity-100",
+            "transition-all duration-300 md:opacity-100",
+            { "opacity-0": pathname === "/" },
             {
               "size-24 text-sm opacity-100": scrolled,
             },
