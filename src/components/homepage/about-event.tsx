@@ -25,7 +25,7 @@ export function AboutEventSection() {
   return (
     <div className="relative mb-10 grid grid-cols-1 grid-rows-1 p-10 lg:grid-cols-2 lg:p-20 lg:pr-0">
       <div
-        className="flex scroll-m-30 flex-col text-base sm:text-xl lg:ml-20 lg:text-2xl xl:mr-20 xl:ml-50"
+        className="flex scroll-m-30 flex-col text-base sm:text-xl lg:ml-20 lg:text-xl xl:mr-20 xl:ml-50"
         id={ABOUT_EVENT_FRAGMENT}
       >
         <h2 className="text-primary text-start text-3xl sm:text-6xl">

@@ -15,7 +15,11 @@ function CountdownPart({ value, label }: { value?: number; label: string }) {
   );
 }
 
-export function EventCountdown({ nextEventDate }: { nextEventDate: Date }) {
+export function EventCountdownInternal({
+  nextEventDate,
+}: {
+  nextEventDate: Date;
+}) {
   const [duration, setDuration] = useState<Duration | undefined>();
 
   // referencing `nextEventDate` directly in the effect causes issues with re-renders (?)
@@ -43,18 +47,15 @@ export function EventCountdown({ nextEventDate }: { nextEventDate: Date }) {
   }, [eventTimestamp]);
 
   return (
-    <div className="mt-9 text-lg sm:text-xl">
-      <p>Następne wydarzenie:</p>
-      <div
-        className={cn("mt-3 flex gap-3 sm:gap-5", {
-          invisible: duration == null,
-        })}
-      >
-        <CountdownPart value={duration?.days} label="d" />
-        <CountdownPart value={duration?.hours} label="h" />
-        <CountdownPart value={duration?.minutes} label="m" />
-        <CountdownPart value={duration?.seconds} label="s" />
-      </div>
+    <div
+      className={cn("mt-3 flex gap-3 sm:gap-5", {
+        invisible: duration == null,
+      })}
+    >
+      <CountdownPart value={duration?.days} label="d" />
+      <CountdownPart value={duration?.hours} label="h" />
+      <CountdownPart value={duration?.minutes} label="m" />
+      <CountdownPart value={duration?.seconds} label="s" />
     </div>
   );
 }

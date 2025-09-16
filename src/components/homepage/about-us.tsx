@@ -26,7 +26,7 @@ function AboutUsRow({
         <h3 className="mb-4 text-xl sm:text-2xl md:text-4xl lg:mt-4">
           {organization.name}
         </h3>
-        <p className="text-foreground/90 max-w-lg text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+        <p className="text-foreground/90 max-w-lg text-base lg:text-lg xl:text-xl">
           {organization.description}
         </p>
         <Button

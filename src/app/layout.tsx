@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   Georama,
   Playfair_Display,
+  Ubuntu,
   Urbanist,
   Yeseva_One,
 } from "next/font/google";
@@ -17,6 +18,7 @@ import { BugReportProvider } from "@/hooks/use-bug-form";
 import { fetchData } from "@/lib/api";
 import { QueryProvider } from "@/lib/query-client";
 import type { CalendarEvent } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
@@ -49,8 +51,14 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "900"],
 });
 
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "UMed × Solvro – „Zdrowie Gra Pierwsze Skrzypce”",
+  title: "Zdrowie Gra Pierwsze Skrzypce",
   description: `Projekt „Zdrowie Gra Pierwsze Skrzypce” we Wrocławiu bada wpływ muzyki na wydolność serca. Sprawdź, jak Uniwersytet Medyczny i ${ORGANIZATIONS.solvro.name} łączą naukę i dźwięki w innowacyjnych badaniach zdrowia!`,
   icons: [{ url: "/favicon.svg", type: "image/svg" }],
 };
@@ -78,7 +86,14 @@ export default async function RootLayout({
       <QueryProvider>
         <BugReportProvider>
           <body
-            className={`${urbanist.variable} ${yesevaOne.variable} ${georama.variable} ${playfairDisplay.variable} bg-background flex min-h-screen flex-col font-sans antialiased`}
+            className={cn(
+              "bg-background flex min-h-screen flex-col font-sans antialiased",
+              urbanist.variable,
+              yesevaOne.variable,
+              georama.variable,
+              playfairDisplay.variable,
+              ubuntu.variable,
+            )}
           >
             <NextTopLoader
               color="var(--color-primary)"
