@@ -29,11 +29,7 @@ export default async function NewsPage() {
             key={post.id}
             variant={index % 2 === 0 ? "default" : "primary"}
           >
-            <RichText
-              className="lg:columns-2"
-              content={post.content}
-              invertColors={index % 2 === 1}
-            />
+            <RichText content={post.content} invertColors={index % 2 === 1} />
           </ContentSection>
         ))
       )}

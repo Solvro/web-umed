@@ -9,9 +9,8 @@ export default function DownloadPage() {
   return (
     <>
       <HeroSection>Pobierz aplikację</HeroSection>
-      {/* TODO: update heading */}
       <ContentSection
-        heading="Aplikacja mobilna dostępna wkrótce!"
+        heading="Aplikacja mobilna dostępna już teraz!"
         className="space-y-4"
       >
         <p>

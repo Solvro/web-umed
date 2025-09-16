@@ -6,7 +6,7 @@ import { ScrollDownButton } from "./scroll-down-button";
 
 export function NewsSection() {
   return (
-    <div className="bg-faded-gradient flex items-center justify-center shadow-xl lg:pt-30">
+    <div className="bg-faded-gradient flex items-center justify-center shadow-xl lg:pt-20">
       <div className="relative flex w-full flex-col items-center">
         <ScrollDownButton />
         <div
