@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -60,7 +60,8 @@ export function CalendarWidget({ events }: { events: CalendarEvent[] }) {
             classNames={{
               day: "cursor-pointer size-8 p-0 font-normal bg-primary rounded-full text-background grid place-items-center",
               day_disabled:
-                "bg-transparent cursor-default! text-foreground size-8 p-0 font-normal aria-selected:opacity-100",
+                "bg-transparent cursor-default! text-foreground! size-8 p-0 font-normal aria-selected:opacity-100",
+              day_today: "border border-primary",
             }}
             onDayClick={() => {
               router.push("/news");

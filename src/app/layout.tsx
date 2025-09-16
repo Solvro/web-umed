@@ -66,7 +66,9 @@ export const metadata: Metadata = {
 async function fetchEvents() {
   let result;
   try {
-    result = await fetchData<{ data: CalendarEvent[] }>("items/events");
+    result = await fetchData<{ data: CalendarEvent[] }>(
+      "items/events?filter[status]=published",
+    );
   } catch (error) {
     console.error("Error fetching events:", error);
     return [];
@@ -86,6 +88,7 @@ export default async function RootLayout({
       <QueryProvider>
         <BugReportProvider>
           <body
+            id="top"
             className={cn(
               "bg-background flex min-h-screen flex-col font-sans antialiased",
               urbanist.variable,

@@ -14,7 +14,7 @@ import logo from "@/../public/logo.svg";
 import { Button } from "@/components/ui/button";
 import { PAGE_PATHS } from "@/config/constants";
 import { useScroll } from "@/hooks/use-scroll";
-import { typedEntries } from "@/lib/helpers";
+import { navigateToElement, typedEntries } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 
 import { DownloadWidget } from "./download-widget";
@@ -63,7 +63,17 @@ export function NavigationBar() {
         },
       )}
     >
-      <Link href="/" aria-label="Wróć do strony głównej">
+      <Link
+        href="/"
+        aria-label="Wróć do strony głównej"
+        onClick={(event_) => {
+          if (pathname !== "/") {
+            return;
+          }
+          event_.preventDefault();
+          navigateToElement("#top");
+        }}
+      >
         <Image
           src={logo as StaticImageData}
           alt="Logo Zdrowie Gra Pierwsze Skrzypce"
