@@ -66,7 +66,7 @@ export const NEWS_SECTION_ID = "news-section";
 export const APP_DOWNLOAD_URLS = {
   googlePlay:
     "https://play.google.com/store/apps/details?id=com.solvro.mobile_umed",
-  appStore: "https://apps.apple.com/pl/app/umed/", // TODO: update the url
+  appStore: "https://apps.apple.com/us/app/pierwsze-skrzypce/id6751172161",
 } satisfies Record<string, Route>;
 
 /** A query to target a Directus CMS item's author data fields. */
