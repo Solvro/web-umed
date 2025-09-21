@@ -4,12 +4,13 @@ import { NoDataInfo } from "@/components/no-data-info";
 import { RichText } from "@/components/rich-text";
 import { PAGE_PATHS, USER_FIELDS_QUERY } from "@/config/constants";
 import { fetchData } from "@/lib/api";
+import { formatPolishDate } from "@/lib/helpers";
 import type { Article } from "@/lib/types";
 
 async function fetchArticles() {
   try {
     const articles = await fetchData<{ data: Article[] }>(
-      `items/articles?filter[status]=published&fields=*,${USER_FIELDS_QUERY}`,
+      `items/articles?sort=-date_created&filter[status]=published&fields=*,${USER_FIELDS_QUERY}`,
     );
     return articles.data;
   } catch (error) {
@@ -37,7 +38,7 @@ export default async function LifestylePage() {
                     </span>
                   </div>
                   <span className="font-light">
-                    {new Date(article.date_created).toLocaleDateString()}
+                    {formatPolishDate(article.date_created)}
                   </span>
                 </div>
                 <span className="sm:text-2xl">

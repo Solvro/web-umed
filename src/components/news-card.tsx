@@ -1,4 +1,4 @@
-import { formatDate, formatDistance } from "date-fns";
+import { formatDistance } from "date-fns";
 import { pl } from "date-fns/locale";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { formatPolishDate } from "@/lib/helpers";
 import type { NewsPost } from "@/lib/types";
 
 import { RichText } from "./rich-text";
@@ -29,9 +30,7 @@ export function NewsCard({ post }: { post: NewsPost }) {
 
   const createdDate = (
     <div className="bg-primary text-primary-foreground mx-auto w-fit rounded-full px-3">
-      {formatDate(new Date(post.date_created), "dd.MM.yyyy", {
-        locale: pl,
-      })}
+      {formatPolishDate(post.date_created)}
     </div>
   );
   const updatedDate =

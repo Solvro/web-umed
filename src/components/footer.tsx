@@ -42,6 +42,9 @@ function FooterLink({
   );
 }
 
+const WEBSITE_CREATION_YEAR = 2025;
+const currentYear = new Date().getFullYear();
+
 function SocialsLogo({ type }: { type: SocialLinkType }) {
   const size = 26;
   if (type === "www") {
@@ -106,7 +109,11 @@ export function Footer() {
         </div>
         <div className="mx-auto mt-4 flex max-w-screen-xl flex-row items-center justify-between px-4 py-6">
           <span>
-            &copy; {new Date().getFullYear()} {ORGANIZATIONS.solvro.name}
+            &copy;{" "}
+            {currentYear === WEBSITE_CREATION_YEAR
+              ? currentYear
+              : `${String(WEBSITE_CREATION_YEAR)}–${String(currentYear)}`}{" "}
+            {ORGANIZATIONS.solvro.name}
           </span>
           <FooterLink
             href="https://solvro.pwr.edu.pl?utm_source=umed&utm_medium=footer"

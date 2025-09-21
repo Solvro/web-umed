@@ -10,7 +10,7 @@ const POSTS_TO_SHOW = 3;
 export async function fetchNewsPosts() {
   try {
     const posts = await fetchData<{ data: NewsPost[] }>(
-      `items/news?filter[status]=published&fields=*,${USER_FIELDS_QUERY}`,
+      `items/news?sort=-date_created&filter[status]=published&fields=*,${USER_FIELDS_QUERY}`,
     );
     return posts.data;
   } catch (error) {

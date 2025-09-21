@@ -12,7 +12,7 @@ export function RichText({
   return (
     <div
       className={cn("prose prose-neutral max-w-none", className, {
-        "prose-invert": invertColors,
+        "prose-invert text-background/90": invertColors,
       })}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: content }}

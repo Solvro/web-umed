@@ -4,6 +4,7 @@ import { fetchNewsPosts } from "@/components/news-container";
 import { NoDataInfo } from "@/components/no-data-info";
 import { RichText } from "@/components/rich-text";
 import { PAGE_PATHS } from "@/config/constants";
+import { formatPolishDate } from "@/lib/helpers";
 
 export default async function NewsPage() {
   const posts = await fetchNewsPosts();
@@ -22,7 +23,7 @@ export default async function NewsPage() {
               >
                 <span className="text-balance sm:text-5xl">{post.title}</span>
                 <span className="font-light">
-                  {new Date(post.date_created).toLocaleDateString()}
+                  {formatPolishDate(post.date_created)}
                 </span>
               </div>
             }

@@ -3,8 +3,9 @@ import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import solvroLogo from "@/../public/solvro.svg";
-import wcaLogo from "@/../public/wca.png";
+import logoSkncs from "@/../public/skncs.jpg";
+import logoSolvro from "@/../public/solvro.svg";
+import logoWca from "@/../public/wca.png";
 import { DoubleQuaver, Quaver } from "@/components/notes";
 import { Button } from "@/components/ui/button";
 import { ORGANIZATIONS } from "@/config/constants";
@@ -93,7 +94,16 @@ export function AboutUs() {
       <AboutUsRow
         organization={ORGANIZATIONS.sknChorobSerca}
         image={
-          <DoubleQuaver className="absolute -bottom-4 left-0 -z-10 size-10 -translate-x-full rotate-12 transform md:size-12 lg:size-16" />
+          <>
+            <Image
+              alt={`Logo ${ORGANIZATIONS.sknChorobSerca.name}`}
+              src={logoSkncs}
+              height={400}
+              className="bg-background h-full w-full object-cover shadow-xl"
+            />
+            <Quaver className="absolute top-0 -right-4 size-10 translate-x-1/2 -translate-y-1/2 rotate-12 transform md:size-12 lg:size-16" />
+            <DoubleQuaver className="absolute -bottom-4 left-0 -z-10 size-10 -translate-x-full rotate-12 transform md:size-12 lg:size-16" />
+          </>
         }
       />
       <AboutUsRow
@@ -103,7 +113,7 @@ export function AboutUs() {
           <>
             <Image
               alt={`Logo ${ORGANIZATIONS.solvro.name}`}
-              src={solvroLogo as StaticImageData}
+              src={logoSolvro as StaticImageData}
               height={400}
               className="bg-background h-full w-full p-10 shadow-xl"
             />
@@ -118,7 +128,7 @@ export function AboutUs() {
         image={
           <>
             <Image
-              src={wcaLogo}
+              src={logoWca}
               width={426}
               height={496}
               alt="Wrocławskie Centrum Akademickie"
