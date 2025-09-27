@@ -15,7 +15,8 @@ import type { CalendarEvent } from "@/lib/types";
 
 async function getNextEvent(): Promise<CalendarEvent | null> {
   const response = await fetchData<{ data: CalendarEvent[] }>(
-    "items/events?filter[status]=published&filter[date][_gt]=$NOW&sort=+date&limit=1",
+    "items/events?filter[status]=published&filter[date][_gt]=$NOW(2h)&sort=+date&limit=1",
+    { next: { revalidate: 5 } },
   );
   if (response.data.length !== 1) {
     console.warn("No upcoming event found");
