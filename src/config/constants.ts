@@ -44,7 +44,6 @@ export const PAGE_PATHS = {
   [`#${ABOUT_EVENT_FRAGMENT}`]: "O wydarzeniu",
   news: "Aktualności",
   lifestyle: "Profilaktyka",
-  results: "Wyniki badań",
 } as const;
 
 export const MUTATION_KEYS = {
