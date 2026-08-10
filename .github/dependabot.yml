@@ -5,3 +5,18 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 15
+
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
+
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+      next:
+        patterns:
+          - "next"
+          - "@next/*"
