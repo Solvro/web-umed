@@ -8,7 +8,7 @@
     "dev": "next dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "next lint",
+    "lint": "eslint .",
     "prepare": "husky || true",
     "start": "next start",
     "typecheck": "tsc --noEmit"
@@ -43,7 +43,6 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
-    "@eslint/eslintrc": "^3",
     "@next/eslint-plugin-next": "^15.5.18",
     "@solvro/config": "^3.0.1",
     "@tailwindcss/postcss": "^4",
