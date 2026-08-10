@@ -46,7 +46,7 @@
     "@next/eslint-plugin-next": "^15.5.23",
     "@solvro/config": "^3.0.1",
     "@tailwindcss/postcss": "^4",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19",
